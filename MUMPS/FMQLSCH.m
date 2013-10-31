@@ -1,5 +1,5 @@
 FMQLSCH ;CG/CD - Caregraf - FMQL Schema Query Processor; 07/12/2013  11:30
- ;;1.0;FMQLQP;;July 12th, 2013
+ ;;1.1a;FMQLQP;;Oct 30th, 2013
  ;
  ; FMQL Schema Query Processor
  ; 
@@ -159,6 +159,8 @@ FIELDSINFO(FLINF) ;
  . D:$D(FDINF("LOC")) DASSERT^FMQLJSON(REPLY,"location",FDINF("LOC"))
  . ; For now, only note simple indexes. Not all ^DD(FILE,"IX",FIELD) as MUMPS there too
  . D:$D(FDINF("IDX")) DASSERT^FMQLJSON(REPLY,"index",FDINF("IDX"))
+ . D:$D(FDINF("TRIGS")) DASSERT^FMQLJSON(REPLY,"triggers",FDINF("TRIGS")) 
+ . D:$D(FDINF("CREFNO")) DASSERT^FMQLJSON(REPLY,"crossReferenceCount",FDINF("CREFNO"))
  . D DASSERT^FMQLJSON(REPLY,"type",FDINF("TYPE"))
  . ; Extra details not in FDINF (yet)
  . N FLDDETAILS

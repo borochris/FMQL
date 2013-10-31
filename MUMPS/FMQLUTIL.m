@@ -1,5 +1,5 @@
 FMQLUTIL ;CG/CD - Caregraf - FMQL Utilities; 07/12/2013  11:30
- ;;1.0;FMQLQP;;Jul 12th, 2013
+ ;;1.1a;FMQLQP;;Oct 30th, 2013
  ;
  ; FMQL Utilities
  ; 
@@ -223,8 +223,9 @@ BLDFDINF(FLINF,FIELD,FDINF) ;
  E  D
  . ; .001 in FM is IEN - may be more than a # ie/ a date or a pointer
  . S FDINF("TYPE")=$S(FIELD=.001:11,FLAGS["D":1,FLAGS["N":2,FLAGS["S":3,FLAGS["F":4,FLAGS["C":6,FLAGS["P":7,FLAGS["V":8,FLAGS["K":10,1:"4") ; Default to String
- . N IDX S IDX=$$FIELDIDX^FMQLUTIL(FILE,FIELD)
- . S:IDX'="" FDINF("IDX")=IDX
+ . ; N IDX S IDX=$$FIELDIDX^FMQLUTIL(FILE,FIELD)
+ . ; S:IDX'="" FDINF("IDX")=IDX
+ . D BLDCREFS(FILE,FIELD,.FDINF)
  ; TODO: this BAD is never reached as type defaults to String
  I FDINF("TYPE")="" S FDINF("BAD")="No type set: "_FILE_"/"_FIELD Q
  ; In VistA, Access, Verify in file 200 are not always encrypted (C*** encrypts its equivalents). Explicitly mark as sensitive.
@@ -279,8 +280,8 @@ BLDFDINF(FLINF,FIELD,FDINF) ;
  ; Get first non-mumps index for a field.
  ; TBD: check ^DD(FILE,"IX",FIELD) - compare to walk below
  ; TBD: support .11 ie. Walk its ^DD("IX","B",FILE#) or ? ie. XREFs defined outside file. Equivalent of DESRIBE _11 FILTER(.01=[FILE]&&.2=R) and look at fields. Will need to distinguish .11 INDEX from Simple like B. Use array.
- ; TBD: move ORDER special in here (it is a MUMPS old ref). 
- ; TBD: future - meta format to define select MUMPS indexes for use here.
+ ; 
+ ; TODO: remove use of this and rely on CREF util below to fill in FDINF
  ;
 FIELDIDX(FILE,FIELD) ;
  N IDXID,IDXINF,IDX
@@ -293,6 +294,31 @@ FIELDIDX(FILE,FIELD) ;
  . S IDXINF=^DD(FILE,FIELD,1,IDXID,0)
  . I $P(IDXINF,"^",3)'="MUMPS" S IDX=$P(^DD(FILE,FIELD,1,IDXID,0),"^",2) Q
  Q IDX
+ ;
+ ; 
+ ; Fill in FLD CROSS REF INFO
+ ;
+ ; Get IDX, TRIGGERs and total number of CREFS of a field. Peer of MUMPS Cross References.
+ ; 
+ ; TODO: move 100, 52 MUMPS special IDX in here
+ ;
+BLDCREFS(FILE,FIELD,FDINF)
+ N IDXID,IDXINF,IDXTYP
+ I FILE=8927.1,FIELD=.01 S FDINF("IDX")="B" ; Missing from TIU TEMP FLD ^DD
+ I '$D(^DD(FILE,FIELD,1,1)) Q
+ S IDXID=0 F  S IDXID=$O(^DD(FILE,FIELD,1,IDXID)) Q:IDXID'=+IDXID  D
+ . Q:'$D(^DD(FILE,FIELD,1,IDXID,0))
+ . S FDINF("CREFNO")=$S($D(FDINF("CREFNO")):FDINF("CREFNO")+1,1:1)
+ . S IDXINF=^DD(FILE,FIELD,1,IDXID,0)
+ . S IDXTYP=$P(IDXINF,"^",3)
+ . I IDXTYP="",'$D(FDINF("IDX")) S FDINF("IDX")=$P(^DD(FILE,FIELD,1,IDXID,0),"^",2) Q
+ . Q:IDXTYP'="TRIGGER"
+ . S TRIGFILE=$P(IDXINF,"^",4)
+ . S TRIGFLD=$P(IDXINF,"^",5)
+ . I $D(FDINF("TRIGS")) S FDINF("TRIGS")=FDINF("TRIGS")_","
+ . E  S FDINF("TRIGS")=""
+ . S FDINF("TRIGS")=FDINF("TRIGS")_$P(IDXINF,"^",4)_"/"_$P(IDXINF,"^",5)
+ Q
  ;
  ;
  ; Get External Value
