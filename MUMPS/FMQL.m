@@ -1,5 +1,5 @@
-FMQLQPE ;CG/CD - Caregraf - FMQL Query Processor Entry Point; 11.01.2013  11:30
- ;;1.1;FMQLQPE;;Nov 1st, 2013
+FMQL ;CG/CD - Caregraf - FMQL Query Processor Entry Point; 11.01.2013  11:30
+ ;;1.1;FMQL;;Nov 1st, 2013
  ;
  ; FMQL Query Processor Entry Point
  ; 
@@ -8,10 +8,10 @@ FMQLQPE ;CG/CD - Caregraf - FMQL Query Processor Entry Point; 11.01.2013  11:30
  ;
  ; Process Query
  ; support RPC or Web serializing friendly ^TMP holding JSON response 
- ; example: PROCESS(.REPLY,"DESCRIBE 2-9") will describe the 9th entry in
+ ; example: QUERY(.REPLY,"DESCRIBE 2-9") will describe the 9th entry in
  ; file 2 into ^TMP($J,"FMQLJSON")
  ; 
-PROCESS(REPLY,QUERY) ;
+QUERY(REPLY,QUERY) ;
  N PARAMS,PRSRES
  ; Note: storing in TMP for large JSON and older Cache-based systems
  K ^TMP($J,"FMQLJSON")  ; VistA Coding Convention
