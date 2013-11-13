@@ -1,5 +1,5 @@
-FMQL ;CG/CD - Caregraf - FMQL Query Processor Entry Point; 11.01.2013  11:30
- ;;1.1;FMQL;;Nov 1st, 2013
+FMQL ;CG/CD - Caregraf - FMQL Query Processor Entry Point; 11.13.2013  11:30
+ ;;1.1;FMQL;;Nov 13th, 2013
  ;
  ; FMQL Query Processor Entry Point
  ; 
@@ -58,12 +58,18 @@ PRSQUERY(INPUT,PARAMS)
  S QRYDEFS("SELECT TYPES","NONE","BADTOO")=""
  S QRYDEFS("SELECT TYPE REFS","TYPE")=""
  S QRYDEFS("DESCRIBE TYPE","TYPE","CRSTOO")=""
+ ; Account for %20 if query over HTTP is not unescaped
+ D UNESCSP(.INPUT)
  ; OP must be at start and can have spaces so loop to find
  D SKPWHITE(.INPUT)
- S OP="" F  S OP=$O(QRYDEFS(OP)) Q:$D(PARAMS(OP))!(OP="")  D
+ ; Go through all OPs each time - longest at end of list
+ S OP="" F  S OP=$O(QRYDEFS(OP)) Q:OP=""  D
  . S VAL=$E(INPUT,1,$L(OP))
+ . ; Either space is next or OP takes up whole input
+ . Q:'($L(OP)=$L(INPUT)!($A(INPUT,$L(OP)+1)=32))
  . I VAL=OP S PARAMS("FOP")=OP S PARAMS("OP")=$$EXTTOINT(OP) Q
- I '$D(PARAMS("OP")) S ERROR="OP MISSING" Q
+ I '$D(PARAMS("OP")) S ERROR="OP MISSING"
+ Q:ERROR'="" ERROR
  S OP=PARAMS("FOP")
  D EATINP(.INPUT,OP)
  S QUAL="NONE"
@@ -147,11 +153,23 @@ SKPWHITE(INPUT)
  S INPUT=$E(INPUT,IDX,$L(INPUT))
  Q
  ;
+UNESCSP(INPUT)
+ N NEXT,DONE
+ S DONE=0 F  D  Q:DONE
+ . S NEXT=$F(INPUT,"%20")
+ . I NEXT=0 S DONE=1 Q
+ . S INPUT=$E(INPUT,1,NEXT-4)_" "_$E(INPUT,NEXT,$L(INPUT))
+ Q
  ;
  ; Basic Test for Query parser
  ;
 TEST
  N QUERY,PARAMS
+ ; Two birds test: first op name is valid but rest isn't
+ S QUERY="DESCRIBEX NONSENSE AND MORE"
+ S ERROR=$$PRSQUERY(QUERY,.PARAMS)
+ I ERROR="" W "0. "_QUERY_" - FAIL: NO EXPECTED ERROR",! Q
+ W "0. "_QUERY_" - SUCCESS - "_ERROR,!
  S QUERY="SELECT 2"
  S ERROR=$$PRSQUERY(QUERY,.PARAMS)
  I ERROR'="" W "1. UNEXPECTED ERROR - "_ERROR,! Q
@@ -259,4 +277,9 @@ TEST
  S ERROR=$$PRSQUERY(QUERY,.PARAMS)
  I ERROR="" W "16. "_QUERY_" - FAIL: NO EXPECTED ERROR",! Q
  W "16. "_QUERY_" - SUCCESS - "_ERROR,!
+ S QUERY="DESCRIBE%202%20LIMIT%202"
+ K PARAMS
+ S ERROR=$$PRSQUERY(QUERY,.PARAMS)
+ I ERROR'="" W "17. UNEXPECTED ERROR - "_ERROR,! Q
+ W "17. "_QUERY_" - SUCCESS",!
  Q
