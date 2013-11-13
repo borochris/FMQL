@@ -16,6 +16,7 @@ from describeTypeResult import FieldInfo
 """
 Quick TODO:
 - CONTAINMENT: cfield or ctype is too messy. Pick a side.
+  - cfield is NOT a field ... access as contained records (possible)
 - setItem for non core field ie/ pass in [mn]: if not reseting an existing value
   i/e want vse: or chcsse: etc.
 
@@ -215,7 +216,7 @@ class Record(object):
         if self.__result[field]["fmType"] == "3":
             fieldId = self.fieldInfo(field)[2]
             # TODO: fieldInfo from Record itself should be enough ie/ enough meta to do everything OR format of coded answer (boolean or enum form) should be in the response
-            return CodedValue(self.__result[field], self.fileType)
+            return CodedValue(self.__result[field], self.fileType, field)
         if self.__result[field]["fmType"] == "1":
             return DateValue(self.__result[field])
         if self.__result[field]["fmType"] in ["2", "4"]:
@@ -806,7 +807,7 @@ class Reference(FieldValue):
     @property
     def label(self):
         # TMP til FMQL 1.0 - CH sub doesn't have qualifier
-        return self._result["label"].split("/")[1] if re.search(r'\/', self._result["label"]) else self._result["label"]
+        return self._result["label"].split("/")[1] if "label" in self._result and re.search(r'\/', self._result["label"]) else self._result["value"].split("_E-")[1]
         
     @property
     def fileType(self):
@@ -820,7 +821,8 @@ class Reference(FieldValue):
 
     @property
     def fileTypeLabel(self):
-        return self._result["label"].split("/")[0]
+        # allows for enums - relies on 'enumLabel' filled in 
+        return self._result["label"].split("/")[0] if "label" in self._result and re.search(r'\/', self._result["label"]) else self._result["enumLabel"]
         
     @property
     def sameAs(self):
@@ -848,7 +850,7 @@ class CodedValue(Literal):
     - FMQL - must add more information to a coded value - specifically what is the index of the value and MN too.
     - Change instantiation - just have CODED References and CODED Literals
     """
-    def __init__(self, result, fileType):
+    def __init__(self, result, fileType, field):
         Literal.__init__(self, result)
         if result["fmType"] != "3":
             raise Exception("Must create CodedValues with CodedValues!")
@@ -856,7 +858,8 @@ class CodedValue(Literal):
             self._datatype = "xsd:boolean" 
         else:
             self._type = "URI"
-            self.__fileType = fileType # needed to make ID
+            self.__fileType = fileType # needed to make
+            self.__fileTypeLabel = re.sub(r'_', ' ', field).title() # for enums ... take field 
         
     def __str__(self):
         mu = str(self.value)
@@ -884,7 +887,7 @@ class CodedValue(Literal):
             raise Exception("Not a Reference")
         fileType = self.__fileType + "_" + re.sub(r'\.', '_', self._result["fmId"]) + "_E"
         uriValue = fileType + "-" + re.sub(r'[^\w]', '_', self._result["value"])
-        return Reference({"value": uriValue, "type": "uri", "fmId": self._result["fmId"]})
+        return Reference({"value": uriValue, "type": "uri", "fmId": self._result["fmId"], "enumLabel": self.__fileTypeLabel})
                 
 class DateValue(Literal):
 
