@@ -159,6 +159,24 @@ class DescribeReply(object):
             query += " CSTOP %(CSTOP)s" % self.__reply["fmql"]            
         return query
         
+    def queryAsId(self):
+        qid = "fmql__"
+        if "URI" in self.__reply["fmql"]:
+            qid += "I%(URI)s" % self.__reply["fmql"]
+        else:
+            qid += "T%(TYPE)s" % self.__reply["fmql"]
+            if "FILTER" in self.__reply["fmql"]:
+                qid += "__F%s" % re.sub(r'\ ', '_', self.__reply["fmql"]["FILTER"])
+            if self.__reply["fmql"]["LIMIT"] != "-1":
+                qid += "__L%(LIMIT)s" % self.__reply["fmql"]
+            if "OFFSET" in self.__reply["fmql"]:
+                qid += "__O%(OFFSET)s" % self.__reply["fmql"]
+            if "AFTERIEN" in self.__reply["fmql"]:
+                qid += "__A%(AFTERIEN)s" % self.__reply["fmql"]                    
+        if "CSTOP" in self.__reply["fmql"]:
+            qid += "__C%(CSTOP)s" % self.__reply["fmql"]            
+        return qid
+        
     def reidentifyQuery(self, anchorId):
         if "URI" in self.__reply["fmql"]:
             self.__reply["fmql"]["URI"] = anchorId
@@ -698,6 +716,10 @@ class FieldValue(object):
         return self._result["value"]
         
     @property
+    def raw(self):
+        return self._result
+        
+    @property
     def fmType(self):
         return FieldInfo.FIELDTYPES[self._result["fmType"]]
 
@@ -730,7 +752,7 @@ class Literal(FieldValue):
     @property
     def datatype(self):
         return self._datatype
-
+        
 class Reference(FieldValue):
     
     def __init__(self, result):
