@@ -1,0 +1,624 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#", 
+    "skos": "http://www.w3.org/2004/02/skos/core#", 
+    "@vocab": "http://datasets.caregraf.org/vs/", 
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#", 
+    "sameAs": {
+      "@id": "owl:sameAs", 
+      "@type": "@id"
+    }, 
+    "prov": "http://www.w3.org/ns/prov#", 
+    "list": "@list", 
+    "label": {
+      "@id": "rdfs:label"
+    }, 
+    "value": "@value", 
+    "fmso": "http://datasets.caregraf.org/fmso/", 
+    "va": "http://schemes.caregraf.info/va/", 
+    "@base": "http://livevista.caregraf.info/", 
+    "vs": "http://datasets.caregraf.org/vs/", 
+    "xsd": "http://www.w3.org/2001/XMLSchema#", 
+    "generatedAt": {
+      "@id": "prov:generatedAtTime", 
+      "@type": "xsd#date"
+    }, 
+    "type": "@type", 
+    "id": "@id"
+  }, 
+  "@graph": [
+    {
+      "vital_type-120_5": {
+        "id": "120_51-2"
+      }, 
+      "hospital_location-120_5": {
+        "id": "44-23"
+      }, 
+      "label": "2008-04-01T07:12:06Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:06Z"
+      }, 
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "120_52-6"
+          }
+        ]
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:22Z"
+      }, 
+      "rate-120_5": "101", 
+      "type": "vs:120_5", 
+      "id": "120_5-284", 
+      "patient-120_5": {
+        "id": "2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "200-64"
+      }
+    }, 
+    {
+      "vital_type-120_5": {
+        "id": "120_51-5"
+      }, 
+      "hospital_location-120_5": {
+        "id": "44-23"
+      }, 
+      "label": "2008-04-01T07:12:06Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:06Z"
+      }, 
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "120_52-59"
+          }, 
+          {
+            "id": "120_52-50"
+          }
+        ]
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:22Z"
+      }, 
+      "rate-120_5": "98", 
+      "type": "vs:120_5", 
+      "id": "120_5-285", 
+      "patient-120_5": {
+        "id": "2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "200-64"
+      }
+    }, 
+    {
+      "vital_type-120_5": {
+        "id": "120_51-3"
+      }, 
+      "hospital_location-120_5": {
+        "id": "44-23"
+      }, 
+      "label": "2008-04-01T07:12:06Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:06Z"
+      }, 
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "120_52-47"
+          }
+        ]
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:22Z"
+      }, 
+      "rate-120_5": "20", 
+      "type": "vs:120_5", 
+      "id": "120_5-286", 
+      "patient-120_5": {
+        "id": "2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "200-64"
+      }
+    }, 
+    {
+      "vital_type-120_5": {
+        "id": "120_51-1"
+      }, 
+      "hospital_location-120_5": {
+        "id": "44-23"
+      }, 
+      "label": "2008-04-01T07:12:06Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:06Z"
+      }, 
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "120_52-1"
+          }, 
+          {
+            "id": "120_52-64"
+          }, 
+          {
+            "id": "120_52-50"
+          }, 
+          {
+            "id": "120_52-66"
+          }
+        ]
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:22Z"
+      }, 
+      "rate-120_5": "140/90", 
+      "type": "vs:120_5", 
+      "id": "120_5-287", 
+      "patient-120_5": {
+        "id": "2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "200-64"
+      }
+    }, 
+    {
+      "vital_type-120_5": {
+        "id": "120_51-2"
+      }, 
+      "hospital_location-120_5": {
+        "id": "44-23"
+      }, 
+      "label": "2008-04-02T07:49:55Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:49:55Z"
+      }, 
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "120_52-6"
+          }
+        ]
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:50:28Z"
+      }, 
+      "rate-120_5": "102", 
+      "type": "vs:120_5", 
+      "id": "120_5-288", 
+      "patient-120_5": {
+        "id": "2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "200-64"
+      }
+    }, 
+    {
+      "vital_type-120_5": {
+        "id": "120_51-5"
+      }, 
+      "hospital_location-120_5": {
+        "id": "44-23"
+      }, 
+      "label": "2008-04-02T07:49:55Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:49:55Z"
+      }, 
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "120_52-59"
+          }, 
+          {
+            "id": "120_52-50"
+          }
+        ]
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:50:28Z"
+      }, 
+      "rate-120_5": "84", 
+      "type": "vs:120_5", 
+      "id": "120_5-289", 
+      "patient-120_5": {
+        "id": "2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "200-64"
+      }
+    }, 
+    {
+      "vital_type-120_5": {
+        "id": "120_51-3"
+      }, 
+      "hospital_location-120_5": {
+        "id": "44-23"
+      }, 
+      "label": "2008-04-02T07:49:55Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:49:55Z"
+      }, 
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "120_52-47"
+          }
+        ]
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:50:28Z"
+      }, 
+      "rate-120_5": "24", 
+      "type": "vs:120_5", 
+      "id": "120_5-290", 
+      "patient-120_5": {
+        "id": "2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "200-64"
+      }
+    }, 
+    {
+      "vital_type-120_5": {
+        "id": "120_51-1"
+      }, 
+      "hospital_location-120_5": {
+        "id": "44-23"
+      }, 
+      "label": "2008-04-02T07:49:55Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:49:55Z"
+      }, 
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "120_52-1"
+          }, 
+          {
+            "id": "120_52-64"
+          }, 
+          {
+            "id": "120_52-50"
+          }, 
+          {
+            "id": "120_52-66"
+          }
+        ]
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:50:28Z"
+      }, 
+      "rate-120_5": "110/70", 
+      "type": "vs:120_5", 
+      "id": "120_5-291", 
+      "patient-120_5": {
+        "id": "2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "200-64"
+      }
+    }, 
+    {
+      "vital_type-120_5": {
+        "id": "120_51-2"
+      }, 
+      "hospital_location-120_5": {
+        "id": "44-23"
+      }, 
+      "label": "2008-04-02T13:16:13Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:16:13Z"
+      }, 
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "120_52-6"
+          }
+        ]
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:17:39Z"
+      }, 
+      "rate-120_5": "101", 
+      "type": "vs:120_5", 
+      "id": "120_5-292", 
+      "patient-120_5": {
+        "id": "2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "200-65"
+      }
+    }, 
+    {
+      "vital_type-120_5": {
+        "id": "120_51-5"
+      }, 
+      "hospital_location-120_5": {
+        "id": "44-23"
+      }, 
+      "label": "2008-04-02T13:16:13Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:16:13Z"
+      }, 
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "120_52-59"
+          }, 
+          {
+            "id": "120_52-50"
+          }
+        ]
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:17:39Z"
+      }, 
+      "rate-120_5": "98", 
+      "type": "vs:120_5", 
+      "id": "120_5-293", 
+      "patient-120_5": {
+        "id": "2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "200-65"
+      }
+    }, 
+    {
+      "vital_type-120_5": {
+        "id": "120_51-3"
+      }, 
+      "hospital_location-120_5": {
+        "id": "44-23"
+      }, 
+      "label": "2008-04-02T13:16:13Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:16:13Z"
+      }, 
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "120_52-47"
+          }
+        ]
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:17:39Z"
+      }, 
+      "rate-120_5": "20", 
+      "type": "vs:120_5", 
+      "id": "120_5-294", 
+      "patient-120_5": {
+        "id": "2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "200-65"
+      }
+    }, 
+    {
+      "vital_type-120_5": {
+        "id": "120_51-1"
+      }, 
+      "hospital_location-120_5": {
+        "id": "44-23"
+      }, 
+      "label": "2008-04-02T13:16:13Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:16:13Z"
+      }, 
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "120_52-1"
+          }, 
+          {
+            "id": "120_52-64"
+          }, 
+          {
+            "id": "120_52-50"
+          }, 
+          {
+            "id": "120_52-66"
+          }
+        ]
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:17:39Z"
+      }, 
+      "rate-120_5": "160/90", 
+      "type": "vs:120_5", 
+      "id": "120_5-295", 
+      "patient-120_5": {
+        "id": "2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "200-65"
+      }
+    }, 
+    {
+      "type": "vs:120_52", 
+      "id": "120_52-64", 
+      "label": "CUFF"
+    }, 
+    {
+      "type": "vs:120_52", 
+      "id": "120_52-66", 
+      "label": "ADULT"
+    }, 
+    {
+      "sameAs": "va:4688669", 
+      "type": "vs:120_52", 
+      "id": "120_52-59", 
+      "label": "PALPATED"
+    }, 
+    {
+      "type": "vs:200", 
+      "id": "200-65", 
+      "label": "ASCLEPIUS,DEUS"
+    }, 
+    {
+      "sameAs": "va:4688706", 
+      "type": "vs:120_52", 
+      "id": "120_52-47", 
+      "label": "SPONTANEOUS"
+    }, 
+    {
+      "type": "vs:2", 
+      "id": "2-9", 
+      "label": "JONES,CHRISTOPHER"
+    }, 
+    {
+      "sameAs": "va:4688703", 
+      "type": "vs:120_52", 
+      "id": "120_52-50", 
+      "label": "SITTING"
+    }, 
+    {
+      "type": "vs:44", 
+      "id": "44-23", 
+      "label": "3 NORTH - ICU"
+    }, 
+    {
+      "sameAs": "va:4500642", 
+      "type": "vs:120_52", 
+      "id": "120_52-6", 
+      "label": "ORAL"
+    }, 
+    {
+      "type": "vs:200", 
+      "id": "200-64", 
+      "label": "USER,FMQL TWENTY-FIVE"
+    }, 
+    {
+      "sameAs": "va:4688725", 
+      "type": "vs:120_51", 
+      "id": "120_51-3", 
+      "label": "RESPIRATION"
+    }, 
+    {
+      "sameAs": "va:4500638", 
+      "type": "vs:120_51", 
+      "id": "120_51-2", 
+      "label": "TEMPERATURE"
+    }, 
+    {
+      "sameAs": "va:4500634", 
+      "type": "vs:120_51", 
+      "id": "120_51-1", 
+      "label": "BLOOD PRESSURE"
+    }, 
+    {
+      "sameAs": "va:4688676", 
+      "type": "vs:120_52", 
+      "id": "120_52-1", 
+      "label": "R ARM"
+    }, 
+    {
+      "sameAs": "va:4500636", 
+      "type": "vs:120_51", 
+      "id": "120_51-5", 
+      "label": "PULSE"
+    }, 
+    {
+      "type": "fmso:File", 
+      "id": "vs:120_51", 
+      "label": "GMRV VITAL TYPE"
+    }, 
+    {
+      "type": "fmso:File", 
+      "id": "vs:2", 
+      "label": "PATIENT"
+    }, 
+    {
+      "type": "fmso:File", 
+      "id": "vs:120_52", 
+      "label": "GMRV VITAL QUALIFIER"
+    }, 
+    {
+      "type": "fmso:File", 
+      "id": "vs:120_5", 
+      "label": "GMRV VITAL MEASUREMENT"
+    }, 
+    {
+      "type": "fmso:File", 
+      "id": "vs:200", 
+      "label": "NEW PERSON"
+    }, 
+    {
+      "type": "fmso:File", 
+      "id": "vs:44", 
+      "label": "HOSPITAL LOCATION"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "va:4688706", 
+      "label": "GMRV VITAL QUALIFIER-SPONTANEOUS"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "va:4688725", 
+      "label": "GMRV VITAL TYPE-RESPIRATION"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "va:4688669", 
+      "label": "GMRV VITAL QUALIFIER-PALPATED"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "va:4500642", 
+      "label": "GMRV VITAL QUALIFIER-ORAL"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "va:4500636", 
+      "label": "GMRV VITAL TYPE-PULSE"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "va:4500634", 
+      "label": "GMRV VITAL TYPE-BLOOD PRESSURE"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "va:4500638", 
+      "label": "GMRV VITAL TYPE-TEMPERATURE"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "va:4688676", 
+      "label": "GMRV VITAL QUALIFIER-R ARM"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "va:4688703", 
+      "label": "GMRV VITAL QUALIFIER-SITTING"
+    }
+  ], 
+  "id": "fmql__T120_5__F.02=2-9&.01>2008-04-01__O0__C10", 
+  "generatedAt": "2013-11-15"
+}

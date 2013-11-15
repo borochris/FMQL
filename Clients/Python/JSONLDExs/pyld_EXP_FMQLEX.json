@@ -1,0 +1,1108 @@
+[
+  {
+    "@id": "http://livevista.caregraf.info/fmql__T120_5__F.02=2-9&.01>2008-04-01__O0__C10", 
+    "@graph": [
+      {
+        "http://datasets.caregraf.org/vs/hospital_location-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/44-23"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/vital_type-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/120_51-2"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/rate-120_5": [
+          {
+            "@value": "101"
+          }
+        ], 
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "2008-04-01T07:12:06Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_taken-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-01T07:12:06Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/patient-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/2-9"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/entered_by-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/200-64"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/qualifier-120_5": [
+          {
+            "@list": [
+              {
+                "@id": "http://livevista.caregraf.info/120_52-6"
+              }
+            ]
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_entered-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-01T07:12:22Z"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_5-284", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_5"
+        ]
+      }, 
+      {
+        "http://datasets.caregraf.org/vs/hospital_location-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/44-23"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/vital_type-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/120_51-5"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/rate-120_5": [
+          {
+            "@value": "98"
+          }
+        ], 
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "2008-04-01T07:12:06Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_taken-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-01T07:12:06Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/patient-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/2-9"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/entered_by-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/200-64"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/qualifier-120_5": [
+          {
+            "@list": [
+              {
+                "@id": "http://livevista.caregraf.info/120_52-59"
+              }, 
+              {
+                "@id": "http://livevista.caregraf.info/120_52-50"
+              }
+            ]
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_entered-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-01T07:12:22Z"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_5-285", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_5"
+        ]
+      }, 
+      {
+        "http://datasets.caregraf.org/vs/hospital_location-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/44-23"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/vital_type-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/120_51-3"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/rate-120_5": [
+          {
+            "@value": "20"
+          }
+        ], 
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "2008-04-01T07:12:06Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_taken-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-01T07:12:06Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/patient-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/2-9"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/entered_by-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/200-64"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/qualifier-120_5": [
+          {
+            "@list": [
+              {
+                "@id": "http://livevista.caregraf.info/120_52-47"
+              }
+            ]
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_entered-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-01T07:12:22Z"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_5-286", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_5"
+        ]
+      }, 
+      {
+        "http://datasets.caregraf.org/vs/hospital_location-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/44-23"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/vital_type-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/120_51-1"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/rate-120_5": [
+          {
+            "@value": "140/90"
+          }
+        ], 
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "2008-04-01T07:12:06Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_taken-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-01T07:12:06Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/patient-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/2-9"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/entered_by-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/200-64"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/qualifier-120_5": [
+          {
+            "@list": [
+              {
+                "@id": "http://livevista.caregraf.info/120_52-1"
+              }, 
+              {
+                "@id": "http://livevista.caregraf.info/120_52-64"
+              }, 
+              {
+                "@id": "http://livevista.caregraf.info/120_52-50"
+              }, 
+              {
+                "@id": "http://livevista.caregraf.info/120_52-66"
+              }
+            ]
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_entered-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-01T07:12:22Z"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_5-287", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_5"
+        ]
+      }, 
+      {
+        "http://datasets.caregraf.org/vs/hospital_location-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/44-23"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/vital_type-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/120_51-2"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/rate-120_5": [
+          {
+            "@value": "102"
+          }
+        ], 
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "2008-04-02T07:49:55Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_taken-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T07:49:55Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/patient-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/2-9"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/entered_by-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/200-64"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/qualifier-120_5": [
+          {
+            "@list": [
+              {
+                "@id": "http://livevista.caregraf.info/120_52-6"
+              }
+            ]
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_entered-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T07:50:28Z"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_5-288", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_5"
+        ]
+      }, 
+      {
+        "http://datasets.caregraf.org/vs/hospital_location-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/44-23"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/vital_type-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/120_51-5"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/rate-120_5": [
+          {
+            "@value": "84"
+          }
+        ], 
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "2008-04-02T07:49:55Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_taken-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T07:49:55Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/patient-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/2-9"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/entered_by-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/200-64"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/qualifier-120_5": [
+          {
+            "@list": [
+              {
+                "@id": "http://livevista.caregraf.info/120_52-59"
+              }, 
+              {
+                "@id": "http://livevista.caregraf.info/120_52-50"
+              }
+            ]
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_entered-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T07:50:28Z"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_5-289", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_5"
+        ]
+      }, 
+      {
+        "http://datasets.caregraf.org/vs/hospital_location-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/44-23"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/vital_type-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/120_51-3"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/rate-120_5": [
+          {
+            "@value": "24"
+          }
+        ], 
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "2008-04-02T07:49:55Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_taken-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T07:49:55Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/patient-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/2-9"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/entered_by-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/200-64"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/qualifier-120_5": [
+          {
+            "@list": [
+              {
+                "@id": "http://livevista.caregraf.info/120_52-47"
+              }
+            ]
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_entered-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T07:50:28Z"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_5-290", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_5"
+        ]
+      }, 
+      {
+        "http://datasets.caregraf.org/vs/hospital_location-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/44-23"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/vital_type-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/120_51-1"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/rate-120_5": [
+          {
+            "@value": "110/70"
+          }
+        ], 
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "2008-04-02T07:49:55Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_taken-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T07:49:55Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/patient-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/2-9"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/entered_by-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/200-64"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/qualifier-120_5": [
+          {
+            "@list": [
+              {
+                "@id": "http://livevista.caregraf.info/120_52-1"
+              }, 
+              {
+                "@id": "http://livevista.caregraf.info/120_52-64"
+              }, 
+              {
+                "@id": "http://livevista.caregraf.info/120_52-50"
+              }, 
+              {
+                "@id": "http://livevista.caregraf.info/120_52-66"
+              }
+            ]
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_entered-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T07:50:28Z"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_5-291", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_5"
+        ]
+      }, 
+      {
+        "http://datasets.caregraf.org/vs/hospital_location-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/44-23"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/vital_type-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/120_51-2"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/rate-120_5": [
+          {
+            "@value": "101"
+          }
+        ], 
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "2008-04-02T13:16:13Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_taken-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T13:16:13Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/patient-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/2-9"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/entered_by-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/200-65"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/qualifier-120_5": [
+          {
+            "@list": [
+              {
+                "@id": "http://livevista.caregraf.info/120_52-6"
+              }
+            ]
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_entered-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T13:17:39Z"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_5-292", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_5"
+        ]
+      }, 
+      {
+        "http://datasets.caregraf.org/vs/hospital_location-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/44-23"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/vital_type-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/120_51-5"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/rate-120_5": [
+          {
+            "@value": "98"
+          }
+        ], 
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "2008-04-02T13:16:13Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_taken-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T13:16:13Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/patient-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/2-9"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/entered_by-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/200-65"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/qualifier-120_5": [
+          {
+            "@list": [
+              {
+                "@id": "http://livevista.caregraf.info/120_52-59"
+              }, 
+              {
+                "@id": "http://livevista.caregraf.info/120_52-50"
+              }
+            ]
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_entered-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T13:17:39Z"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_5-293", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_5"
+        ]
+      }, 
+      {
+        "http://datasets.caregraf.org/vs/hospital_location-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/44-23"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/vital_type-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/120_51-3"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/rate-120_5": [
+          {
+            "@value": "20"
+          }
+        ], 
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "2008-04-02T13:16:13Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_taken-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T13:16:13Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/patient-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/2-9"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/entered_by-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/200-65"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/qualifier-120_5": [
+          {
+            "@list": [
+              {
+                "@id": "http://livevista.caregraf.info/120_52-47"
+              }
+            ]
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_entered-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T13:17:39Z"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_5-294", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_5"
+        ]
+      }, 
+      {
+        "http://datasets.caregraf.org/vs/hospital_location-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/44-23"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/vital_type-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/120_51-1"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/rate-120_5": [
+          {
+            "@value": "160/90"
+          }
+        ], 
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "2008-04-02T13:16:13Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_taken-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T13:16:13Z"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/patient-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/2-9"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/entered_by-120_5": [
+          {
+            "@id": "http://livevista.caregraf.info/200-65"
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/qualifier-120_5": [
+          {
+            "@list": [
+              {
+                "@id": "http://livevista.caregraf.info/120_52-1"
+              }, 
+              {
+                "@id": "http://livevista.caregraf.info/120_52-64"
+              }, 
+              {
+                "@id": "http://livevista.caregraf.info/120_52-50"
+              }, 
+              {
+                "@id": "http://livevista.caregraf.info/120_52-66"
+              }
+            ]
+          }
+        ], 
+        "http://datasets.caregraf.org/vs/date_time_vitals_entered-120_5": [
+          {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+            "@value": "2008-04-02T13:17:39Z"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_5-295", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_5"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "CUFF"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_52-64", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_52"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "ADULT"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_52-66", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_52"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "PALPATED"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_52-59", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_52"
+        ], 
+        "http://www.w3.org/2002/07/owl#sameAs": [
+          {
+            "@id": "http://schemes.caregraf.info/va/4688669"
+          }
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "ASCLEPIUS,DEUS"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/200-65", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/200"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "SPONTANEOUS"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_52-47", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_52"
+        ], 
+        "http://www.w3.org/2002/07/owl#sameAs": [
+          {
+            "@id": "http://schemes.caregraf.info/va/4688706"
+          }
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "JONES,CHRISTOPHER"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/2-9", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/2"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "SITTING"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_52-50", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_52"
+        ], 
+        "http://www.w3.org/2002/07/owl#sameAs": [
+          {
+            "@id": "http://schemes.caregraf.info/va/4688703"
+          }
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "3 NORTH - ICU"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/44-23", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/44"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "ORAL"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_52-6", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_52"
+        ], 
+        "http://www.w3.org/2002/07/owl#sameAs": [
+          {
+            "@id": "http://schemes.caregraf.info/va/4500642"
+          }
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "USER,FMQL TWENTY-FIVE"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/200-64", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/200"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "RESPIRATION"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_51-3", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_51"
+        ], 
+        "http://www.w3.org/2002/07/owl#sameAs": [
+          {
+            "@id": "http://schemes.caregraf.info/va/4688725"
+          }
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "TEMPERATURE"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_51-2", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_51"
+        ], 
+        "http://www.w3.org/2002/07/owl#sameAs": [
+          {
+            "@id": "http://schemes.caregraf.info/va/4500638"
+          }
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "BLOOD PRESSURE"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_51-1", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_51"
+        ], 
+        "http://www.w3.org/2002/07/owl#sameAs": [
+          {
+            "@id": "http://schemes.caregraf.info/va/4500634"
+          }
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "R ARM"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_52-1", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_52"
+        ], 
+        "http://www.w3.org/2002/07/owl#sameAs": [
+          {
+            "@id": "http://schemes.caregraf.info/va/4688676"
+          }
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "PULSE"
+          }
+        ], 
+        "@id": "http://livevista.caregraf.info/120_51-5", 
+        "@type": [
+          "http://datasets.caregraf.org/vs/120_51"
+        ], 
+        "http://www.w3.org/2002/07/owl#sameAs": [
+          {
+            "@id": "http://schemes.caregraf.info/va/4500636"
+          }
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "GMRV VITAL TYPE"
+          }
+        ], 
+        "@id": "http://datasets.caregraf.org/vs/120_51", 
+        "@type": [
+          "http://datasets.caregraf.org/fmso/File"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "PATIENT"
+          }
+        ], 
+        "@id": "http://datasets.caregraf.org/vs/2", 
+        "@type": [
+          "http://datasets.caregraf.org/fmso/File"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "GMRV VITAL QUALIFIER"
+          }
+        ], 
+        "@id": "http://datasets.caregraf.org/vs/120_52", 
+        "@type": [
+          "http://datasets.caregraf.org/fmso/File"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "GMRV VITAL MEASUREMENT"
+          }
+        ], 
+        "@id": "http://datasets.caregraf.org/vs/120_5", 
+        "@type": [
+          "http://datasets.caregraf.org/fmso/File"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "NEW PERSON"
+          }
+        ], 
+        "@id": "http://datasets.caregraf.org/vs/200", 
+        "@type": [
+          "http://datasets.caregraf.org/fmso/File"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "HOSPITAL LOCATION"
+          }
+        ], 
+        "@id": "http://datasets.caregraf.org/vs/44", 
+        "@type": [
+          "http://datasets.caregraf.org/fmso/File"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "GMRV VITAL QUALIFIER-SPONTANEOUS"
+          }
+        ], 
+        "@id": "http://schemes.caregraf.info/va/4688706", 
+        "@type": [
+          "http://www.w3.org/2004/02/skos/core#Concept"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "GMRV VITAL TYPE-RESPIRATION"
+          }
+        ], 
+        "@id": "http://schemes.caregraf.info/va/4688725", 
+        "@type": [
+          "http://www.w3.org/2004/02/skos/core#Concept"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "GMRV VITAL QUALIFIER-PALPATED"
+          }
+        ], 
+        "@id": "http://schemes.caregraf.info/va/4688669", 
+        "@type": [
+          "http://www.w3.org/2004/02/skos/core#Concept"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "GMRV VITAL QUALIFIER-ORAL"
+          }
+        ], 
+        "@id": "http://schemes.caregraf.info/va/4500642", 
+        "@type": [
+          "http://www.w3.org/2004/02/skos/core#Concept"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "GMRV VITAL TYPE-PULSE"
+          }
+        ], 
+        "@id": "http://schemes.caregraf.info/va/4500636", 
+        "@type": [
+          "http://www.w3.org/2004/02/skos/core#Concept"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "GMRV VITAL TYPE-BLOOD PRESSURE"
+          }
+        ], 
+        "@id": "http://schemes.caregraf.info/va/4500634", 
+        "@type": [
+          "http://www.w3.org/2004/02/skos/core#Concept"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "GMRV VITAL TYPE-TEMPERATURE"
+          }
+        ], 
+        "@id": "http://schemes.caregraf.info/va/4500638", 
+        "@type": [
+          "http://www.w3.org/2004/02/skos/core#Concept"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "GMRV VITAL QUALIFIER-R ARM"
+          }
+        ], 
+        "@id": "http://schemes.caregraf.info/va/4688676", 
+        "@type": [
+          "http://www.w3.org/2004/02/skos/core#Concept"
+        ]
+      }, 
+      {
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+          {
+            "@value": "GMRV VITAL QUALIFIER-SITTING"
+          }
+        ], 
+        "@id": "http://schemes.caregraf.info/va/4688703", 
+        "@type": [
+          "http://www.w3.org/2004/02/skos/core#Concept"
+        ]
+      }
+    ], 
+    "http://www.w3.org/ns/prov#generatedAtTime": [
+      {
+        "@type": "http://datasets.caregraf.org/vs/xsd#date", 
+        "@value": "2013-11-15"
+      }
+    ]
+  }
+]

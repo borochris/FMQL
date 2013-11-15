@@ -1,0 +1,622 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#", 
+    "skos": "http://www.w3.org/2004/02/skos/core#", 
+    "@vocab": "http://datasets.caregraf.org/vs/", 
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#", 
+    "sameAs": {
+      "@id": "owl:sameAs", 
+      "@type": "@id"
+    }, 
+    "prov": "http://www.w3.org/ns/prov#", 
+    "list": "@list", 
+    "label": {
+      "@id": "rdfs:label"
+    }, 
+    "value": "@value", 
+    "fmso": "http://datasets.caregraf.org/fmso/", 
+    "vs": "http://datasets.caregraf.org/vs/", 
+    "xsd": "http://www.w3.org/2001/XMLSchema#", 
+    "generatedAt": {
+      "@id": "prov:generatedAtTime", 
+      "@type": "xsd#date"
+    }, 
+    "type": "@type", 
+    "id": "@id"
+  }, 
+  "@graph": [
+    {
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "http://livevista.caregraf.info/120_52-6"
+          }
+        ]
+      }, 
+      "vital_type-120_5": {
+        "id": "http://livevista.caregraf.info/120_51-2"
+      }, 
+      "label": "2008-04-01T07:12:06Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:06Z"
+      }, 
+      "hospital_location-120_5": {
+        "id": "http://livevista.caregraf.info/44-23"
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:22Z"
+      }, 
+      "rate-120_5": "101", 
+      "type": "120_5", 
+      "id": "http://livevista.caregraf.info/120_5-284", 
+      "patient-120_5": {
+        "id": "http://livevista.caregraf.info/2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "http://livevista.caregraf.info/200-64"
+      }
+    }, 
+    {
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "http://livevista.caregraf.info/120_52-59"
+          }, 
+          {
+            "id": "http://livevista.caregraf.info/120_52-50"
+          }
+        ]
+      }, 
+      "vital_type-120_5": {
+        "id": "http://livevista.caregraf.info/120_51-5"
+      }, 
+      "label": "2008-04-01T07:12:06Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:06Z"
+      }, 
+      "hospital_location-120_5": {
+        "id": "http://livevista.caregraf.info/44-23"
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:22Z"
+      }, 
+      "rate-120_5": "98", 
+      "type": "120_5", 
+      "id": "http://livevista.caregraf.info/120_5-285", 
+      "patient-120_5": {
+        "id": "http://livevista.caregraf.info/2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "http://livevista.caregraf.info/200-64"
+      }
+    }, 
+    {
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "http://livevista.caregraf.info/120_52-47"
+          }
+        ]
+      }, 
+      "vital_type-120_5": {
+        "id": "http://livevista.caregraf.info/120_51-3"
+      }, 
+      "label": "2008-04-01T07:12:06Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:06Z"
+      }, 
+      "hospital_location-120_5": {
+        "id": "http://livevista.caregraf.info/44-23"
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:22Z"
+      }, 
+      "rate-120_5": "20", 
+      "type": "120_5", 
+      "id": "http://livevista.caregraf.info/120_5-286", 
+      "patient-120_5": {
+        "id": "http://livevista.caregraf.info/2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "http://livevista.caregraf.info/200-64"
+      }
+    }, 
+    {
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "http://livevista.caregraf.info/120_52-1"
+          }, 
+          {
+            "id": "http://livevista.caregraf.info/120_52-64"
+          }, 
+          {
+            "id": "http://livevista.caregraf.info/120_52-50"
+          }, 
+          {
+            "id": "http://livevista.caregraf.info/120_52-66"
+          }
+        ]
+      }, 
+      "vital_type-120_5": {
+        "id": "http://livevista.caregraf.info/120_51-1"
+      }, 
+      "label": "2008-04-01T07:12:06Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:06Z"
+      }, 
+      "hospital_location-120_5": {
+        "id": "http://livevista.caregraf.info/44-23"
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-01T07:12:22Z"
+      }, 
+      "rate-120_5": "140/90", 
+      "type": "120_5", 
+      "id": "http://livevista.caregraf.info/120_5-287", 
+      "patient-120_5": {
+        "id": "http://livevista.caregraf.info/2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "http://livevista.caregraf.info/200-64"
+      }
+    }, 
+    {
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "http://livevista.caregraf.info/120_52-6"
+          }
+        ]
+      }, 
+      "vital_type-120_5": {
+        "id": "http://livevista.caregraf.info/120_51-2"
+      }, 
+      "label": "2008-04-02T07:49:55Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:49:55Z"
+      }, 
+      "hospital_location-120_5": {
+        "id": "http://livevista.caregraf.info/44-23"
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:50:28Z"
+      }, 
+      "rate-120_5": "102", 
+      "type": "120_5", 
+      "id": "http://livevista.caregraf.info/120_5-288", 
+      "patient-120_5": {
+        "id": "http://livevista.caregraf.info/2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "http://livevista.caregraf.info/200-64"
+      }
+    }, 
+    {
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "http://livevista.caregraf.info/120_52-59"
+          }, 
+          {
+            "id": "http://livevista.caregraf.info/120_52-50"
+          }
+        ]
+      }, 
+      "vital_type-120_5": {
+        "id": "http://livevista.caregraf.info/120_51-5"
+      }, 
+      "label": "2008-04-02T07:49:55Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:49:55Z"
+      }, 
+      "hospital_location-120_5": {
+        "id": "http://livevista.caregraf.info/44-23"
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:50:28Z"
+      }, 
+      "rate-120_5": "84", 
+      "type": "120_5", 
+      "id": "http://livevista.caregraf.info/120_5-289", 
+      "patient-120_5": {
+        "id": "http://livevista.caregraf.info/2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "http://livevista.caregraf.info/200-64"
+      }
+    }, 
+    {
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "http://livevista.caregraf.info/120_52-47"
+          }
+        ]
+      }, 
+      "vital_type-120_5": {
+        "id": "http://livevista.caregraf.info/120_51-3"
+      }, 
+      "label": "2008-04-02T07:49:55Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:49:55Z"
+      }, 
+      "hospital_location-120_5": {
+        "id": "http://livevista.caregraf.info/44-23"
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:50:28Z"
+      }, 
+      "rate-120_5": "24", 
+      "type": "120_5", 
+      "id": "http://livevista.caregraf.info/120_5-290", 
+      "patient-120_5": {
+        "id": "http://livevista.caregraf.info/2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "http://livevista.caregraf.info/200-64"
+      }
+    }, 
+    {
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "http://livevista.caregraf.info/120_52-1"
+          }, 
+          {
+            "id": "http://livevista.caregraf.info/120_52-64"
+          }, 
+          {
+            "id": "http://livevista.caregraf.info/120_52-50"
+          }, 
+          {
+            "id": "http://livevista.caregraf.info/120_52-66"
+          }
+        ]
+      }, 
+      "vital_type-120_5": {
+        "id": "http://livevista.caregraf.info/120_51-1"
+      }, 
+      "label": "2008-04-02T07:49:55Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:49:55Z"
+      }, 
+      "hospital_location-120_5": {
+        "id": "http://livevista.caregraf.info/44-23"
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T07:50:28Z"
+      }, 
+      "rate-120_5": "110/70", 
+      "type": "120_5", 
+      "id": "http://livevista.caregraf.info/120_5-291", 
+      "patient-120_5": {
+        "id": "http://livevista.caregraf.info/2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "http://livevista.caregraf.info/200-64"
+      }
+    }, 
+    {
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "http://livevista.caregraf.info/120_52-6"
+          }
+        ]
+      }, 
+      "vital_type-120_5": {
+        "id": "http://livevista.caregraf.info/120_51-2"
+      }, 
+      "label": "2008-04-02T13:16:13Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:16:13Z"
+      }, 
+      "hospital_location-120_5": {
+        "id": "http://livevista.caregraf.info/44-23"
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:17:39Z"
+      }, 
+      "rate-120_5": "101", 
+      "type": "120_5", 
+      "id": "http://livevista.caregraf.info/120_5-292", 
+      "patient-120_5": {
+        "id": "http://livevista.caregraf.info/2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "http://livevista.caregraf.info/200-65"
+      }
+    }, 
+    {
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "http://livevista.caregraf.info/120_52-59"
+          }, 
+          {
+            "id": "http://livevista.caregraf.info/120_52-50"
+          }
+        ]
+      }, 
+      "vital_type-120_5": {
+        "id": "http://livevista.caregraf.info/120_51-5"
+      }, 
+      "label": "2008-04-02T13:16:13Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:16:13Z"
+      }, 
+      "hospital_location-120_5": {
+        "id": "http://livevista.caregraf.info/44-23"
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:17:39Z"
+      }, 
+      "rate-120_5": "98", 
+      "type": "120_5", 
+      "id": "http://livevista.caregraf.info/120_5-293", 
+      "patient-120_5": {
+        "id": "http://livevista.caregraf.info/2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "http://livevista.caregraf.info/200-65"
+      }
+    }, 
+    {
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "http://livevista.caregraf.info/120_52-47"
+          }
+        ]
+      }, 
+      "vital_type-120_5": {
+        "id": "http://livevista.caregraf.info/120_51-3"
+      }, 
+      "label": "2008-04-02T13:16:13Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:16:13Z"
+      }, 
+      "hospital_location-120_5": {
+        "id": "http://livevista.caregraf.info/44-23"
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:17:39Z"
+      }, 
+      "rate-120_5": "20", 
+      "type": "120_5", 
+      "id": "http://livevista.caregraf.info/120_5-294", 
+      "patient-120_5": {
+        "id": "http://livevista.caregraf.info/2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "http://livevista.caregraf.info/200-65"
+      }
+    }, 
+    {
+      "qualifier-120_5": {
+        "list": [
+          {
+            "id": "http://livevista.caregraf.info/120_52-1"
+          }, 
+          {
+            "id": "http://livevista.caregraf.info/120_52-64"
+          }, 
+          {
+            "id": "http://livevista.caregraf.info/120_52-50"
+          }, 
+          {
+            "id": "http://livevista.caregraf.info/120_52-66"
+          }
+        ]
+      }, 
+      "vital_type-120_5": {
+        "id": "http://livevista.caregraf.info/120_51-1"
+      }, 
+      "label": "2008-04-02T13:16:13Z", 
+      "date_time_vitals_taken-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:16:13Z"
+      }, 
+      "hospital_location-120_5": {
+        "id": "http://livevista.caregraf.info/44-23"
+      }, 
+      "date_time_vitals_entered-120_5": {
+        "type": "xsd:dateTime", 
+        "value": "2008-04-02T13:17:39Z"
+      }, 
+      "rate-120_5": "160/90", 
+      "type": "120_5", 
+      "id": "http://livevista.caregraf.info/120_5-295", 
+      "patient-120_5": {
+        "id": "http://livevista.caregraf.info/2-9"
+      }, 
+      "entered_by-120_5": {
+        "id": "http://livevista.caregraf.info/200-65"
+      }
+    }, 
+    {
+      "type": "120_52", 
+      "id": "http://livevista.caregraf.info/120_52-64", 
+      "label": "CUFF"
+    }, 
+    {
+      "type": "120_52", 
+      "id": "http://livevista.caregraf.info/120_52-66", 
+      "label": "ADULT"
+    }, 
+    {
+      "sameAs": "http://schemes.caregraf.info/va/4688669", 
+      "type": "120_52", 
+      "id": "http://livevista.caregraf.info/120_52-59", 
+      "label": "PALPATED"
+    }, 
+    {
+      "type": "200", 
+      "id": "http://livevista.caregraf.info/200-65", 
+      "label": "ASCLEPIUS,DEUS"
+    }, 
+    {
+      "sameAs": "http://schemes.caregraf.info/va/4688706", 
+      "type": "120_52", 
+      "id": "http://livevista.caregraf.info/120_52-47", 
+      "label": "SPONTANEOUS"
+    }, 
+    {
+      "type": "2", 
+      "id": "http://livevista.caregraf.info/2-9", 
+      "label": "JONES,CHRISTOPHER"
+    }, 
+    {
+      "sameAs": "http://schemes.caregraf.info/va/4688703", 
+      "type": "120_52", 
+      "id": "http://livevista.caregraf.info/120_52-50", 
+      "label": "SITTING"
+    }, 
+    {
+      "type": "44", 
+      "id": "http://livevista.caregraf.info/44-23", 
+      "label": "3 NORTH - ICU"
+    }, 
+    {
+      "sameAs": "http://schemes.caregraf.info/va/4500642", 
+      "type": "120_52", 
+      "id": "http://livevista.caregraf.info/120_52-6", 
+      "label": "ORAL"
+    }, 
+    {
+      "type": "200", 
+      "id": "http://livevista.caregraf.info/200-64", 
+      "label": "USER,FMQL TWENTY-FIVE"
+    }, 
+    {
+      "sameAs": "http://schemes.caregraf.info/va/4688725", 
+      "type": "120_51", 
+      "id": "http://livevista.caregraf.info/120_51-3", 
+      "label": "RESPIRATION"
+    }, 
+    {
+      "sameAs": "http://schemes.caregraf.info/va/4500638", 
+      "type": "120_51", 
+      "id": "http://livevista.caregraf.info/120_51-2", 
+      "label": "TEMPERATURE"
+    }, 
+    {
+      "sameAs": "http://schemes.caregraf.info/va/4500634", 
+      "type": "120_51", 
+      "id": "http://livevista.caregraf.info/120_51-1", 
+      "label": "BLOOD PRESSURE"
+    }, 
+    {
+      "sameAs": "http://schemes.caregraf.info/va/4688676", 
+      "type": "120_52", 
+      "id": "http://livevista.caregraf.info/120_52-1", 
+      "label": "R ARM"
+    }, 
+    {
+      "sameAs": "http://schemes.caregraf.info/va/4500636", 
+      "type": "120_51", 
+      "id": "http://livevista.caregraf.info/120_51-5", 
+      "label": "PULSE"
+    }, 
+    {
+      "type": "fmso:File", 
+      "id": "vs:120_51", 
+      "label": "GMRV VITAL TYPE"
+    }, 
+    {
+      "type": "fmso:File", 
+      "id": "vs:2", 
+      "label": "PATIENT"
+    }, 
+    {
+      "type": "fmso:File", 
+      "id": "vs:120_52", 
+      "label": "GMRV VITAL QUALIFIER"
+    }, 
+    {
+      "type": "fmso:File", 
+      "id": "vs:120_5", 
+      "label": "GMRV VITAL MEASUREMENT"
+    }, 
+    {
+      "type": "fmso:File", 
+      "id": "vs:200", 
+      "label": "NEW PERSON"
+    }, 
+    {
+      "type": "fmso:File", 
+      "id": "vs:44", 
+      "label": "HOSPITAL LOCATION"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "http://schemes.caregraf.info/va/4688706", 
+      "label": "GMRV VITAL QUALIFIER-SPONTANEOUS"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "http://schemes.caregraf.info/va/4688725", 
+      "label": "GMRV VITAL TYPE-RESPIRATION"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "http://schemes.caregraf.info/va/4688669", 
+      "label": "GMRV VITAL QUALIFIER-PALPATED"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "http://schemes.caregraf.info/va/4500642", 
+      "label": "GMRV VITAL QUALIFIER-ORAL"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "http://schemes.caregraf.info/va/4500636", 
+      "label": "GMRV VITAL TYPE-PULSE"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "http://schemes.caregraf.info/va/4500634", 
+      "label": "GMRV VITAL TYPE-BLOOD PRESSURE"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "http://schemes.caregraf.info/va/4500638", 
+      "label": "GMRV VITAL TYPE-TEMPERATURE"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "http://schemes.caregraf.info/va/4688676", 
+      "label": "GMRV VITAL QUALIFIER-R ARM"
+    }, 
+    {
+      "type": "skos:Concept", 
+      "id": "http://schemes.caregraf.info/va/4688703", 
+      "label": "GMRV VITAL QUALIFIER-SITTING"
+    }
+  ], 
+  "id": "http://livevista.caregraf.info/fmql__T120_5__F.02=2-9&.01>2008-04-01__O0__C10", 
+  "generatedAt": "2013-11-15"
+}

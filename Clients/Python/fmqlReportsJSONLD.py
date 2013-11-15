@@ -343,11 +343,17 @@ except:
 
 def usePyld():
 
+    # Grab the vitals used in frame 1 
+    query = {"fmql": "DESCRIBE 120_5 FILTER(.02=2-9&.01>2008-04-01)", "format": "JSON-LD"}
+    queryURL = FMQLEP + "?" + urllib.urlencode(query)
+    jreply = json.loads(urllib2.urlopen(queryURL).read())
+    json.dump(jreply, open("fmql_FMQL_F1.json", "w"), indent=2)
+
     # Grab the vitals used in frame 2 
     query = {"fmql": "DESCRIBE 120_5 FILTER(.02=2-9&.01>2008-04-01)", "format": "JSON-LD2"}
     queryURL = FMQLEP + "?" + urllib.urlencode(query)
     jreply = json.loads(urllib2.urlopen(queryURL).read())
-    json.dump(jreply, open("fmql_FMQLEX.json", "w"), indent=2)
+    json.dump(jreply, open("fmql_FMQL_F2.json", "w"), indent=2)
 
     # Let's produce different forms of JSON-LD (and RDF) from this 
     
