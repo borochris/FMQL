@@ -328,6 +328,8 @@ def reportVitals9F2():
 #
 # Ala Framing 3 but all predicates are normalized ... name-2 -> name in the context
 #
+# Consider embedding File Label into file id ie/ vs:PATIENT-2, not vs:2
+#
 # ... COMING 
 #
                 
