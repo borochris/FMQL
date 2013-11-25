@@ -42,12 +42,12 @@ from brokerRPC import VistARPCConnection
 
 SYSTEMONLY = False # Change once system specific numbers below are set
 
-def runTest(qp, testGroupName, testId, testDef):
+def runTest(rpcc, testGroupName, testId, testDef):
     print "========= Test %s: %s ========" % (testGroupName, testId)
     print testDef["description"]
     start = datetime.now()
     try: 
-        reply = qp.processQuery({"fmql": [testDef["fmql"]]})
+        reply = rpcc.invokeRPC("CG FMQL QP", [testDef["fmql"]])
         end = datetime.now()
         delta = end-start
         jreply = json.loads(reply)
@@ -254,20 +254,15 @@ TESTSCHEMATESTS = {
             "count": "5393",
         },
         {
-            "description": "SELECT TYPES BADTOO",
-            "fmql": "SELECT TYPES BADTOO",
-            "count": "5410",
-            "test": "testResult=(len(jreply['results']) == int(jreply['allCount']))" # 5410 for test system
-        },
-        {
             "description": "SELECT TYPES TOPONLY",
             "fmql": "SELECT TYPES TOPONLY",
             "count": "2359"
         },
         {
-            "description": "SELECT TYPES TOPONLY BADTOO",
-            "fmql": "SELECT TYPES TOPONLY BADTOO",
-            "test": "testResult=(len(jreply['results']) == int(jreply['topCount']))" # 2375 for test system
+            "description": "DESCRIBE BADTYPES",
+            "fmql": "DESCRIBE BADTYPES",
+            "count": "49",
+            "test": "testResult=(len(jreply['results']) == int(jreply['badCount']))" 
         },
         {
             "description": "SELECT TYPES POPONLY",
@@ -1064,8 +1059,6 @@ def main():
 
     try:
         rpcc = VistARPCConnection(args[0], int(args[1]), args[2], args[3], "CG FMQL QP USER", DefaultLogger())
-        logger = DefaultLogger()
-        fmqlQP = FMQLQP(rpcc, logger)
     except Exception as e:
         print "Failed to log in to VistA (bad parameters?): %s ... exiting" % e
         return
@@ -1081,7 +1074,7 @@ def main():
         for i, testSet in enumerate(TESTSETS, 1):
             for j, testDef in enumerate(testSet["definitions"], 1):
                 total += 1
-                if not runTest(fmqlQP, testSet["name"], str(i) + ":" + str(j), testDef):
+                if not runTest(rpcc, testSet["name"], str(i) + ":" + str(j), testDef):
                     fails += 1
                     if stopOnFail:
                         break

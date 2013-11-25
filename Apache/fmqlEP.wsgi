@@ -1,5 +1,5 @@
 #
-# fmqlEP wsgi v1.0
+# fmqlEP wsgi v1.1b
 #
 # This class stitches together brokerRPC and an FMQLQueryProcessor to make 
 # an FMQL Endpoint that runs in Apache.
@@ -14,12 +14,11 @@
 import os, sys, urlparse, re, json
 sys.path.append(os.path.dirname(__file__))
 from brokerRPC import RPCConnectionPool
-from fmqlQP import FMQLQP
 
 class FMQLEP:
 
     def __init__(self):
-        self.qp = None
+        self.rpcc = None
         self.fmqlEnviron = None
 
     def setFMQLEnviron(self, fmqlEnviron):
@@ -29,7 +28,7 @@ class FMQLEP:
 
     def __call__(self, environ, start_response):
         try:
-            if not self.qp: # TBD make thread safe
+            if not self.rpcc: # TBD make thread safe
                 if not self.fmqlEnviron: # for Apache, not simple server
                     self.fmqlEnviron = {}
                     self.fmqlEnviron["rpcbroker"] = environ["fmql.rpcbroker"]
@@ -37,9 +36,12 @@ class FMQLEP:
                     self.fmqlEnviron["rpcport"] = environ["fmql.rpcport"]
                     self.fmqlEnviron["rpcaccess"] = environ["fmql.rpcaccess"]
                     self.fmqlEnviron["rpcverify"] = environ["fmql.rpcverify"]
-                self.__initQueryProcessor(environ)
+                self.__initConnectionPool(environ)
             queryArgs = urlparse.parse_qs(environ['QUERY_STRING'])
-            reply = self.qp.processQuery(queryArgs)
+            if "fmql" not in queryArgs:
+                raise Exception("Expect fmql=")
+            fmqlQuery = queryArgs["fmql"][0]
+            reply = self.rpcc.invokeRPC("CG FMQL QP", [fmqlQuery])
         # Exceptions: setting up comms to VistA or even QP code error
         except Exception as e:
             print >> sys.stderr, "FMQLEP: %s" % e # internal or entry level errors
@@ -52,13 +54,11 @@ class FMQLEP:
         start_response(status, response_headers)
         return [reply]
 
-    def __initQueryProcessor(self, environ):
+    def __initConnectionPool(self, environ):
         # 25 if multi-threaded (ala winnt mpm or worker mpm), 1 otherwise (prefork unix, the Apache unix default). Nice if could
         # get actual number of threads in a process.
         noThreads = 25 if environ["wsgi.multithread"] == True else 1
-        rpcc = RPCConnectionPool(self.fmqlEnviron["rpcbroker"], noThreads, self.fmqlEnviron["rpchost"], int(self.fmqlEnviron["rpcport"]), self.fmqlEnviron["rpcaccess"], self.fmqlEnviron["rpcverify"], "CG FMQL QP USER", WSGILogger("BrokerRPC"))
-        logger = WSGILogger("FMQLQP")
-        self.qp = FMQLQP(rpcc, logger)
+        self.rpcc = RPCConnectionPool(self.fmqlEnviron["rpcbroker"], noThreads, self.fmqlEnviron["rpchost"], int(self.fmqlEnviron["rpcport"]), self.fmqlEnviron["rpcaccess"], self.fmqlEnviron["rpcverify"], "CG FMQL QP USER", WSGILogger("BrokerRPC"))
 
 class WSGILogger:
     def __init__(self, generator):
