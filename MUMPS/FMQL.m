@@ -33,6 +33,7 @@ QUERY(REPLY,QUERY) ;
  ; - support SELECT fld FROM fid
  ; - ) inside filter (last ))
  ; - default values (noidxmax, cstop)
+ ; - move unescape for HTTP out of here (responsibility of stack)
  ;
 PRSQUERY(INPUT,PARAMS)
  N ERROR,QRYDEFS,OP,VAL,QUAL,TOKEN,NSTRT,NEND,INPUTTV,CHECK
@@ -55,9 +56,9 @@ PRSQUERY(INPUT,PARAMS)
  S QRYDEFS("DESCRIBE","TYPE","IN")="QID"
  S QRYDEFS("SELECT TYPES","NONE","TOPONLY")=""
  S QRYDEFS("SELECT TYPES","NONE","POPONLY")=""
- S QRYDEFS("SELECT TYPES","NONE","BADTOO")=""
  S QRYDEFS("SELECT TYPE REFS","TYPE")=""
- S QRYDEFS("DESCRIBE TYPE","TYPE","CRSTOO")=""
+ S QRYDEFS("DESCRIBE BADTYPES","NONE")=""
+ S QRYDEFS("DESCRIBE TYPE","TYPE","FULL")=""
  ; Account for %20 if query over HTTP is not unescaped
  D UNESCSP(.INPUT)
  ; OP must be at start and can have spaces so loop to find
