@@ -19,7 +19,6 @@ import cgi
 import re
 
 sys.path.append('../Framework')
-from fmqlQP import FMQLQP
 from brokerRPC import VistARPCConnection
 
 """
