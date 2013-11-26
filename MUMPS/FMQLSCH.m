@@ -2,10 +2,10 @@ FMQLSCH ;CG/CD - Caregraf - FMQL Schema Query Processor; 07/12/2013  11:30
  ;;1.1b;FMQLQP;;Nov 25th, 2013
  ;
  ; FMQL Schema Query Processor
- ; 
+ ;
  ; Companion of FMQLDATA - this resolves schema queries. Like its
  ; peer, it uses FLINF utilities rather than reading FM's raw dicts.
- ; 
+ ;
  ; FMQL Query Processor (c) Caregraf 2010-2013 AGPL
  ;
 ALLTYPES(REPLY,FMQLPARAMS) ;
@@ -64,7 +64,7 @@ BADTYPES(REPLY,FMQLPARAMS) ;
  . . . N FDINF D BLDFDINF^FMQLUTIL(.FLINF,FIELD,.FDINF)
  . . . I '$D(FDINF("BAD")) Q
  . . . I HASBFLD=0 D
- . . . . S HASBFLD=1 
+ . . . . S HASBFLD=1
  . . . . S CNT=CNT+1
  . . . . D DICTSTART^FMQLJSON(REPLY)
  . . . . D DASSERT^FMQLJSON(REPLY,"number",FILE)
@@ -73,7 +73,7 @@ BADTYPES(REPLY,FMQLPARAMS) ;
  . . . D DASSERT^FMQLJSON(REPLY,"number",FDINF("FIELD"))
  . . . D DASSERT^FMQLJSON(REPLY,"corruption",FDINF("BAD"))
  . . . D DICTEND^FMQLJSON(REPLY)
- . . I HASBFLD=1 D 
+ . . I HASBFLD=1 D
  . . . D LISTEND^FMQLJSON(REPLY)
  . . . D DICTEND^FMQLJSON(REPLY)
  D LISTEND^FMQLJSON(REPLY)
@@ -194,7 +194,7 @@ FIELDSINFO(FLINF) ;
  . D:$D(FDINF("LOC")) DASSERT^FMQLJSON(REPLY,"location",FDINF("LOC"))
  . ; For now, only note simple indexes. Not all ^DD(FILE,"IX",FIELD) as MUMPS there too
  . D:$D(FDINF("IDX")) DASSERT^FMQLJSON(REPLY,"index",FDINF("IDX"))
- . D:$D(FDINF("TRIGS")) DASSERT^FMQLJSON(REPLY,"triggers",FDINF("TRIGS")) 
+ . D:$D(FDINF("TRIGS")) DASSERT^FMQLJSON(REPLY,"triggers",FDINF("TRIGS"))
  . D:$D(FDINF("CREFNO")) DASSERT^FMQLJSON(REPLY,"crossReferenceCount",FDINF("CREFNO"))
  . D DASSERT^FMQLJSON(REPLY,"type",FDINF("TYPE"))
  . ; Extra details not in FDINF (yet)

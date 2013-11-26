@@ -2,9 +2,9 @@ FMQLQP ;CG/CD - Caregraf - FMQL Query Processor Entry Point; 11.25.2013  11:30
  ;;1.1b;FMQL;;Nov 25th, 2013
  ;
  ; FMQL Query Processor Entry Point
- ; 
+ ;
  ; FMQL Query Processor (c) Caregraf 2010-2013 AGPL
- ; 
+ ;
  ;
  ; Process Query
  ; support RPC or Web serializing friendly ^TMP holding JSON response 
@@ -81,13 +81,13 @@ PRSQUERY(INPUT,PARAMS) ;
  . S VAL=$$PRSINP(.INPUT)
  . ; QID form ends in E to allow for non numeric 'meaningful' IENs
  . I $D(QRYDEFS(OP,"QID")),VAL?0.N0.1"_"1.N1"-"1.E S PARAMS("TYPE")=$P(VAL,"-",1) S QUAL="QID" S PARAMS("ID")=$P(VAL,"-",2) Q
- . I $D(QRYDEFS(OP,"TYPE")),VAL?0.N0.1"_"1.N S QUAL="TYPE" S PARAMS("TYPE")=VAL Q  
+ . I $D(QRYDEFS(OP,"TYPE")),VAL?0.N0.1"_"1.N S QUAL="TYPE" S PARAMS("TYPE")=VAL Q
  . S ERROR="TYPE MISSING"
  Q:ERROR'="" ERROR
  ; Take out FILTER text before looking at other arguments. It may contain those arguments as keywords. NOIDXMAX is a proxy for FILTER support.
  I $D(QRYDEFS(OP,QUAL,"NOIDXMAX")) D
  . S NSTRT=$F(INPUT,"FILTER")
- . Q:NSTRT=0 ; No Filter
+ . Q:NSTRT=0  ; No Filter
  . S NEND=$F(INPUT,")",NSTRT)
  . S NPOS=NSTRT,NEND=0 F  S NPOS=$F(INPUT,")",NPOS) Q:'NPOS  S NEND=NPOS
  . I NEND=0 S ERROR="FILTER ) MISSING" Q
@@ -100,7 +100,7 @@ PRSQUERY(INPUT,PARAMS) ;
  Q:ERROR'="" ERROR
  S TOKEN="" F  S TOKEN=$O(QRYDEFS(OP,QUAL,TOKEN)) Q:TOKEN=""!(ERROR'="")  D
  . S NSTRT=$F(INPUT,TOKEN)
- . Q:NSTRT=0  ; TOKEN not found  
+ . Q:NSTRT=0  ; TOKEN not found
  . ; TOKEN only argument - by convention make value = 1
  . I QRYDEFS(OP,QUAL,TOKEN)="" S PARAMS(TOKEN)=1 Q
  . S INPUTTV=$E(INPUT,NSTRT,$L(INPUT))  ; There is an argument
@@ -127,7 +127,7 @@ PROCQRY(REPLY,FMQLPARAMS) ;
  S @REPLY@(0)="{""error"":""No Such Operation: "_FMQLPARAMS("OP")_"""}"
  Q
  ;
- ; 
+ ;
  ; TODO: internal code uses slightly different names for some parameters
  ;
 EXTTOINT(EXTNAME) ;
@@ -136,7 +136,7 @@ EXTTOINT(EXTNAME) ;
  Q EXTNAME
  ;
  ;
- ; 
+ ;
  ;
 PRSINP(INPUT,SEP,EAT) ;
  N VAL
@@ -170,7 +170,7 @@ SKPWHITE(INPUT) ;
  Q
  ;
  ; TMP: move to utils (should be done outside). Removes HTTP escape.
- ; 
+ ;
 UNESCSP(INPUT) ;
  N NEXT,DONE
  S DONE=0 F  D  Q:DONE

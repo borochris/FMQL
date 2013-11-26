@@ -1,5 +1,5 @@
-FMQLJSON ;CG/CD - Caregraf - FMQL JSON Builder; 07/12/2013  11:30
- ;;1.0;FMQLQP;;Jul 12th, 2013
+FMQLJSON ;CG/CD - Caregraf - FMQL JSON Builder; 11/26/2013  11:30
+ ;;1.1.b;FMQLQP;;Nov 26th, 2013
  ;
  ; FMQL JSON Builder
  ; 
@@ -161,12 +161,20 @@ PUTDATA(JSON,DATA) ;
  ;
  ; NOTE: will get warning on GT/M as doesn't like conditional call to Cache's ZHEX.
  ;
-JSONSTRING(MSTR) ;
- N JSTR S JSTR=""
- N I F I=1:1:$L(MSTR) D
- . N NC S NC=$E(MSTR,I)
- . N CD S CD=$A(NC) Q:CD=""  ; Check "" though GT/M and Cache say $A works for all unicode
- . ; \b,\t,\n,\f,\r separated - ",\ escaped with \ - 32 to 126 themselves; others 4 hex unicode.
- . S JSTR=JSTR_$S(CD=8:"\b",CD=9:"\t",CD=10:"\n",CD=12:"\f",CD=13:"\r",CD=34:$C(92)_$C(34),CD=92:$C(92)_$C(92),(CD>31&(CD<127)):NC,$L($T(FUNC^%UTF2HEX)):"\u"_$TR($J($$FUNC^%UTF2HEX(NC),4)," ","0"),1:"\u"_$TR($J($ZHEX(CD),4)," ","0"))
- Q JSTR
+JSONSTRING(IN) N ASCII,II,HEX,HH,OUT
+ S ASCII(8)="\b"
+ S ASCII(9)="\t"
+ S ASCII(10)="\n"
+ S ASCII(12)="\f"
+ S ASCII(13)="\r"
+ S ASCII(34)="\"""
+ S ASCII(92)="\\"
+ S OUT="" F II=1:1:$L(IN) D
+ . S ASCII=$A(IN,II)
+ . I $G(ASCII(ASCII))'="" S OUT=OUT_ASCII(ASCII) Q
+ . I ASCII>31,ASCII<127 S OUT=OUT_$C(ASCII) Q
+ . S HEX="" F HH=1:1:4 S HEX=$E("0123456789abcdef",ASCII#16+1)_HEX,ASCII=ASCII\16
+ . S OUT=OUT_"\u"_HEX
+ . Q
+ Q OUT
  ;
