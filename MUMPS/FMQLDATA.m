@@ -1,5 +1,5 @@
-FMQLDATA ;CG/CD - Caregraf - FMQL Data Query Processor; 07/12/2013  11:30
- ;;1.0;FMQLQP;;Jul 12th, 2013
+FMQLDATA ;CG/CD - Caregraf - FMQL Data Query Processor; 11/25/2013  11:30
+ ;;1.1b;FMQLQP;;Nov 25th, 2013
  ;
  ;
  ; FMQL Data Query Processor
@@ -100,8 +100,8 @@ JSEL(REPLY,FLINF,FAR,IEN,PARAMS) ;
  ; - replace for unusual IENS in .11 etc.
  N FID S FID=$S('$D(FLINF("GL")):IEN_"_"_$QS(FAR,$QL(FAR)-1),1:IEN)
  D IDFIELD(.FLINF,FAR,IEN,FID)
- I $D(PARAMS("PREDICATE")) D
- . N FDINF D BLDFDINF^FMQLUTIL(.FLINF,PARAMS("PREDICATE"),.FDINF)
+ I $D(PARAMS("FIELD")) D
+ . N FDINF D BLDFDINF^FMQLUTIL(.FLINF,PARAMS("FIELD"),.FDINF)
  . Q:$D(FDINF("BAD"))  ; TBD: centralize
  . Q:FDINF("TYPE")=9  ; Don't allow CNode selection this way. Force "IN".
  . Q:FDINF("TYPE")=11  ; For now, don't allow .001 as most not explicitly exposed

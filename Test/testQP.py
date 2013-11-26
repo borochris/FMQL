@@ -230,7 +230,7 @@ CNT_VITALSFROM2008ON="104" # Vitals from 2008 on
 CNT_HVITALSOFTPNEIE="12" # Height Vitals of patient
 CNT_ORDERSOFOTP = "5"
 CNT_ACCESSIONS = "15"
-CNT_REFS = "1116"
+CNT_REFS = "1669"
 BADSCHEMANOFILE = "1_01"
 BADSCHEMA01FILE = "627_99" # File with bad schema for its .01 field
 MUMPSCODETESTID = "68-11"
@@ -679,7 +679,7 @@ SELECTPREDTESTS = {
     "definitions": [
         {
             "description": "Select patient id for 100 problems",
-            "fmql": "SELECT .02 FROM 9000011 LIMIT 10",
+            "fmql": "SELECT 9000011 FIELD .02 LIMIT 10",
             "test": "testResult = (jreply['count']=='10' and 'patient_name' in jreply['results'][0])",
         },
         # TMP
@@ -934,7 +934,7 @@ DOTIENTESTS = {
 STESTSETS.append(DOTIENTESTS)
 
 # .001's are special - reaches into Schema view displaying them and data where value is a pointer or a date. Current test system has no example of the pointer form which is in three places in C***'s Lab schema.
-# SELECT .001 FROM 50_6 LIMIT 10
+# SELECT 50_6 FIELD .001 LIMIT 10
 OO1IENTESTS = {
     "name": ".001 IEN Tests",
     "definitions": [
@@ -960,7 +960,7 @@ OO1IENTESTS = {
         },
         {
             "description": "DATA 3_07 - even its .001 can't be isolated in SELECT FROM",
-            "fmql": "SELECT .001 FROM 3_07 LIMIT 2",
+            "fmql": "SELECT 3_07 FIELD .001 LIMIT 2",
             "test": "testResult=('date_time' not in jreply['results'][0])",
         },
         {
@@ -1085,5 +1085,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 

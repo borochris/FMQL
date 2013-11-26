@@ -33,23 +33,23 @@ FMQLRPC(RPCREPLY,RPCARG) ;
  ; ... returns a parse error when the INPUT is invalid, otherwise ""
  ;
  ; TODO: 
- ; - fully 'eat' input
- ; - support SELECT fld FROM fid
- ; - ) inside filter (last ))
- ; - default values (noidxmax, cstop)
- ; - move unescape for HTTP out of here (responsibility of stack)
+ ; - fully consume input and error if extraneous items
  ;
 PRSQUERY(INPUT,PARAMS) ;
- N ERROR,QRYDEFS,OP,VAL,QUAL,TOKEN,NSTRT,NEND,INPUTTV,CHECK
+ N ERROR,QRYDEFS,OP,VAL,QUAL,TOKEN,NSTRT,NEND,NPOS,INPUTTV,CHECK
  S ERROR=""
  S QRYDEFS("SELECT","TYPE","LIMIT")="NUM"
  S QRYDEFS("SELECT","TYPE","OFFSET")="NUM"
  S QRYDEFS("SELECT","TYPE","AFTERIEN")="NUM"
  S QRYDEFS("SELECT","TYPE","NOIDXMAX")="NUM"
+ S QRYDEFS("SELECT","TYPE","IN")="QID"
+ S QRYDEFS("SELECT","TYPE","ORDERBY")="FLDID"
+ S QRYDEFS("SELECT","TYPE","FIELD")="FLDID"
  S QRYDEFS("COUNT","TYPE","LIMIT")="NUM"
  S QRYDEFS("COUNT","TYPE","OFFSET")="NUM"
  S QRYDEFS("COUNT","TYPE","AFTERIEN")="NUM"
  S QRYDEFS("COUNT","TYPE","NOIDXMAX")="NUM"
+ S QRYDEFS("COUNT","TYPE","IN")="QID"
  S QRYDEFS("COUNT REFS","QID")=""
  S QRYDEFS("DESCRIBE","QID","CSTOP")="NUM"
  S QRYDEFS("DESCRIBE","TYPE","LIMIT")="NUM"
@@ -58,13 +58,12 @@ PRSQUERY(INPUT,PARAMS) ;
  S QRYDEFS("DESCRIBE","TYPE","CSTOP")="NUM"
  S QRYDEFS("DESCRIBE","TYPE","NOIDXMAX")="NUM"
  S QRYDEFS("DESCRIBE","TYPE","IN")="QID"
+ S QRYDEFS("DESCRIBE","TYPE","ORDERBY")="FLDID"
  S QRYDEFS("SELECT TYPES","NONE","TOPONLY")=""
  S QRYDEFS("SELECT TYPES","NONE","POPONLY")=""
  S QRYDEFS("SELECT TYPE REFS","TYPE")=""
  S QRYDEFS("DESCRIBE BADTYPES","NONE")=""
  S QRYDEFS("DESCRIBE TYPE","TYPE","FULL")=""
- ; Account for %20 if query over HTTP is not unescaped
- D UNESCSP(.INPUT)
  ; OP must be at start and can have spaces so loop to find
  D SKPWHITE(.INPUT)
  ; Go through all OPs each time - longest at end of list
@@ -88,9 +87,9 @@ PRSQUERY(INPUT,PARAMS) ;
  ; Take out FILTER text before looking at other arguments. It may contain those arguments as keywords. NOIDXMAX is a proxy for FILTER support.
  I $D(QRYDEFS(OP,QUAL,"NOIDXMAX")) D
  . S NSTRT=$F(INPUT,"FILTER")
- . Q:NSTRT=0
- . ; TODO: allow embedded brackets
+ . Q:NSTRT=0 ; No Filter
  . S NEND=$F(INPUT,")",NSTRT)
+ . S NPOS=NSTRT,NEND=0 F  S NPOS=$F(INPUT,")",NPOS) Q:'NPOS  S NEND=NPOS
  . I NEND=0 S ERROR="FILTER ) MISSING" Q
  . S VAL=$E(INPUT,NSTRT,NEND-1)
  . D SKPWHITE(.VAL)
@@ -106,10 +105,12 @@ PRSQUERY(INPUT,PARAMS) ;
  . I QRYDEFS(OP,QUAL,TOKEN)="" S PARAMS(TOKEN)=1 Q
  . S INPUTTV=$E(INPUT,NSTRT,$L(INPUT))  ; There is an argument
  . S VAL=$$PRSINP(.INPUTTV," ",0)
- . S CHECK=$S(QRYDEFS(OP,QUAL,TOKEN)="NUM":VAL?1.N,QRYDEFS(OP,QUAL,TOKEN)="QID":VAL?0.N0.1"_"1.N1"-"1.N,1:1)
- . I CHECK=0 S ERROR="INVALID VALUE FOR "_TOKEN Q
+ . ; QID allows E IENs; FLDID must be N or .N or N.N
+ . S CHECK=$S(QRYDEFS(OP,QUAL,TOKEN)="NUM":VAL?1.N,QRYDEFS(OP,QUAL,TOKEN)="QID":VAL?0.N0.1"_"1.N1"-"1.E,QRYDEFS(OP,QUAL,TOKEN)="FLDID":VAL?0.N0.1"."1.N,1:1)
+ . I CHECK=0 S ERROR="INVALID VALUE FOR "_TOKEN_":"_VAL Q
  . S PARAMS($$EXTTOINT(TOKEN))=VAL
  Q:ERROR'="" ERROR
+ ; REM: default of NOIDXMX and CSTOP set further inside
  Q ""
  ;
 PROCQRY(REPLY,FMQLPARAMS) ;
@@ -168,6 +169,8 @@ SKPWHITE(INPUT) ;
  S INPUT=$E(INPUT,IDX,$L(INPUT))
  Q
  ;
+ ; TMP: move to utils (should be done outside). Removes HTTP escape.
+ ; 
 UNESCSP(INPUT) ;
  N NEXT,DONE
  S DONE=0 F  D  Q:DONE

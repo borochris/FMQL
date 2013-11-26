@@ -31,7 +31,7 @@ def simpleEPTests():
     queryURL = FMQLEP + "?" + urllib.urlencode(bquery)
     reply = urllib2.urlopen(queryURL).read()
     print reply
-    queries = ["DESCRIBE 2-1", "COUNT REFS 2-9", "DESCRIBE 2", "SELECT 2", "COUNT 2", "DESCRIBE 2_0361 IN 2-3", "SELECT 2 LIMIT 3 OFFSET 1", "SELECT .01 FROM 2 LIMIT 3", "DESCRIBE 79_3 FILTER(.03=2-1)", "COUNT 50_68 FILTER(.05=11-2) NOIDXMAX 1", "BADQUERY"]
+    queries = ["DESCRIBE 2-1", "COUNT REFS 2-9", "DESCRIBE 2", "SELECT 2", "COUNT 2", "DESCRIBE 2_0361 IN 2-3", "SELECT 2 LIMIT 3 OFFSET 1", "SELECT 2 FIELD .01 LIMIT 3", "DESCRIBE 79_3 FILTER(.03=2-1)", "COUNT 50_68 FILTER(.05=11-2) NOIDXMAX 1", "BADQUERY"]
     output = "json"
     for query in queries:
         print "=========================================================="
