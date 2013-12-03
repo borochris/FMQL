@@ -191,6 +191,7 @@ FIELDSINFO(FLINF) ;
  . ; Send over all the flags. May process more on client side
  . D DASSERT^FMQLJSON(REPLY,"flags",FDINF("FLAGS"))
  . D DASSERT^FMQLJSON(REPLY,"name",FDINF("LABEL"))
+ . D DASSERT^FMQLJSON(REPLY,"pred",FDINF("PRED"))
  . D:$D(FDINF("LOC")) DASSERT^FMQLJSON(REPLY,"location",FDINF("LOC"))
  . ; For now, only note simple indexes. Not all ^DD(FILE,"IX",FIELD) as MUMPS there too
  . D:$D(FDINF("IDX")) DASSERT^FMQLJSON(REPLY,"index",FDINF("IDX"))
