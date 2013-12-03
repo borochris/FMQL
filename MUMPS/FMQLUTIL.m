@@ -213,7 +213,7 @@ BLDFDINF(FLINF,FIELD,FDINF) ;
  S FDINF("FLAGS")=FLAGS
  S FDINF("LABEL")=$P(^DD(FILE,FIELD,0),"^")
  ; Pred: use in XML fields/RDF and JSON. TODO: account for name reuse
- S FDINF("PRED")=$$FIELDTOPRED(FDINF("LABEL"))
+ S FDINF("PRED")=$$UNIQPRED(FILE,FIELD)
  ; Date/Number/Codes/String/WP String/Pointer/V Pointer/MULT/MUMPS
  ; TBD: Computed - B, m, D
  I +FLAGS D  ; WP and MULT both refer to subfile in flags.
@@ -427,5 +427,21 @@ FIELDTOPRED(FIELD) ;
  SET UPC="ABCDEFGHIJKLMNOPQRSTUVWXYZ /"
  SET LOC="abcdefghijklmnopqrstuvwxyz__"
  S PRED=$TR($TR(FIELD,$TR(FIELD,ALW)),UPC,LOC)
+ Q PRED
+ ;
+ ;
+ ; Unique predicate means accounting for use of the same name by prior fields
+ ; If a reuse then add field id (escaped) as suffix to normalized name to make
+ ; the predicate.
+ ;
+UNIQPRED(FILE,FIELD) ;
+ N OWNS,TNNAME,PFIELD,PNNAME,PRED
+ S OWNS=1
+ S NNAME=$$FIELDTOPRED($P(^DD(FILE,FIELD,0),"^"))
+ S PFIELD=0 F  S PFIELD=$O(^DD(FILE,PFIELD)) Q:PFIELD=FIELD!(OWNS=0)  D
+ . Q:'$D(^DD(FILE,PFIELD,0))
+ . S PNNAME=$$FIELDTOPRED($P(^DD(FILE,PFIELD,0),"^"))
+ . I PNNAME=NNAME S OWNS=0 Q
+ S PRED=$S(OWNS=1:NNAME,1:NNAME_"-"_$TR(FIELD,".","_"))
  Q PRED
  ;
