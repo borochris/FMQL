@@ -205,6 +205,7 @@ BLDSFINF(FILE,FLINF) ;
  ; - Add ^DD(FILE,FIELD,1,1,...)
  ;
 BLDFDINF(FLINF,FIELD,FDINF) ;
+ N MFLAG
  N FILE S FILE=FLINF("FILE")
  S FIELD=$TR(FIELD,"_",".")
  S FDINF("FIELD")=FIELD
@@ -215,14 +216,17 @@ BLDFDINF(FLINF,FIELD,FDINF) ;
  ; Pred: use in XML fields/RDF and JSON. TODO: account for name reuse
  S FDINF("PRED")=$$UNIQPRED(FILE,FIELD)
  ; Date/Number/Codes/String/WP String/Pointer/V Pointer/MULT/MUMPS
- ; TBD: Computed - B, m, D
- I +FLAGS D  ; WP and MULT both refer to subfile in flags.
+ I +FLAGS D  ; WP and MULT flag start with the subfile number
+ . ; WP special - need to reach into its 'file' to see what it is
  . I $P($G(^DD(+FLAGS,.01,0)),"^",2)["W" S FDINF("TYPE")=5
- . E  S FDINF("TYPE")=9 S FDINF("SUBFILE")=+FLAGS  ; TBD: validate ["M ?
- ; TBD: Default String even if no "F". Should log.
+ . E  S FDINF("TYPE")=9 S FDINF("SUBFILE")=+FLAGS  ; 'M' does not mean Multiple
  E  D
+ . ; Standard FileMan uses K for MUMPS; C*** uses Q
+ . S MFLAG=$S(^TMP($J,"NS")="C***":"Q",1:"Q")
  . ; .001 in FM is IEN - may be more than a # ie/ a date or a pointer
- . S FDINF("TYPE")=$S(FIELD=.001:11,FLAGS["D":1,FLAGS["N":2,FLAGS["S":3,FLAGS["F":4,FLAGS["C":6,FLAGS["P":7,FLAGS["V":8,FLAGS["K":10,1:"4") ; Default to String
+ . ; If computed (C), punt to client - BC, DC, Cmp - until FMQL calcs computeds
+ . ; Note: Cm does not mean Computed Multiple. 'm' means multi-line string
+ . S FDINF("TYPE")=$S(FIELD=.001:11,FLAGS["C":6,FLAGS["D":1,FLAGS["N":2,FLAGS["S":3,FLAGS["F":4,FLAGS["P":7,FLAGS["V":8,FLAGS[MFLAG:10,1:"4") ; Default to String
  . ; N IDX S IDX=$$FIELDIDX^FMQLUTIL(FILE,FIELD)
  . ; S:IDX'="" FDINF("IDX")=IDX
  . D BLDCREFS(FILE,FIELD,.FDINF)
