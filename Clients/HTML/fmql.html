@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link href="/bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet" />
+	<link href="/toastr/toastr.css" rel="stylesheet" />
+	<link href="/select2/select2.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/bootstrap-3.0.0/assets/js/html5shiv.js"></script>
+      <script src="/bootstrap-3.0.0/assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="/bootstrap-3.0.0/assets/ico/favicon.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/bootstrap-3.0.0/assets/ico/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/bootstrap-3.0.0/assets/ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/bootstrap-3.0.0/assets/ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="/bootstrap-3.0.0/assets/ico/apple-touch-icon-57-precomposed.png" />
+
+    <script src="/socket.io/socket.io.js"></script>
+    <!--[if (IE 6)|(IE 7)|(IE 8)]><script type="text/javascript" src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script><![endif]-->
+
+    <title>FMQL</title>
+
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+      .infoPanel {
+        background-color: #eeeeee;
+        margin-bottom: 10px;
+        padding: 1px 8px 5px 8px;
+      }
+
+      .infoHeader {
+        background-color: #dddddd;        
+      }
+
+      .nav > li.disabled.nav-header > a {
+        cursor: default;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .focusedInput {
+        border-color: rgba(82,168,236,.8);
+        outline: 0;
+        outline: thin dotted \9;
+        -moz-box-shadow: 0 0 8px rgba(82,168,236,.6);
+        box-shadow: 0 0 8px rgba(82,168,236,.6) !important;
+      }
+
+    </style>
+
+
+  </head>
+
+  <body>
+
+    <!-- Modal Login Form -->
+
+    <div id="loginPanel" class="modal fade">
+      <div class="modal-dialog">
+        <div id="loginModalPanel" class="modal-content">
+          <div class="modal-header">
+            <h3 id="ewd-loginPanel-title"></h3>
+          </div>
+          <div id="loginPanelBody" class="modal-body">
+            <form id="loginForm" role="form">
+              <legend>Please log in</legend>
+              <div class="form-group">
+                <label for="username">Username: </label>
+                <input type="text" class="form-control focusedInput" id="username" placeholder="Enter your username" />
+              </div>
+              <div class="form-group">
+                <label for="password">Password: &nbsp;</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password" />
+              </div>
+            </form>
+            <div class="text-center text-danger" id="loginAlertText">&nbsp;</div>
+          </div>
+          <div class="modal-footer">
+            <a href="#" id="loginBtn" style="display: none" class="btn btn-primary">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Main Page Definition -->
+
+    <!-- NavBar header -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="container">
+          <div class="navbar-header">
+            <div class="navbar-brand visible-xs" id="ewd-navbar-title-phone">FMQL Demo App</div>
+            <div class="navbar-brand hidden-xs" id="ewd-navbar-title-other">FMQL Demo Application</div>
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse navbar-ex1-collapse">
+            <p class="navbar-text navbar-right">
+              <span id="loggedInAs"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+	
+    <!-- Main body -->
+
+    <div class="container">
+
+        <div id="summaryPage" class="collapse in col-sm-9">
+          <div class="jumbotron">
+           <div class="container">
+            <h1>FMQL query demo</h1>
+            <p>
+			   Implemented in Bootstrap using EWD.js
+            </p>
+           </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-9 ">
+             <div class="infoPanel">
+              <h2 class="infoHeader">Query Input</h2>
+				<form id="queryForm" role="form">
+				  <div class="form-group">
+					<label for="queryText">Query Text </label>
+					<input type="text" class="form-control focusedInput" id="queryText" placeholder="Enter your query here" />
+				  </div>
+              <p>
+                <a class="btn btn-primary" id="querySub" href="#">Submit</a>
+				<a class="btn btn-primary" id="previousBtn" href="#">Go Back</a>
+              </p>
+ 				</form>
+           <div class="text-center text-danger" id="queryAlertText">&nbsp;</div>
+             </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-9 ">
+             <div class="infoPanel">
+              <h2 class="infoHeader">Results</h2>
+				<div id="resultsTable">
+				</div>
+			  </div>
+            </div>
+          </div>
+
+
+        </div>
+
+    </div>
+
+
+<footer class="bs-footer" role="contentinfo">
+	<div id="footer"><a href="http://vista.caregraf.info">Master FileMan's Data</a>&trade; (c) 2013 <span id="flogo"><a href="http://www.caregraf.com">Caregraf</a></span></div>
+</footer>
+
+    <!-- Bootstrap core JavaScript
+     ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script type="text/javascript" src="/ewd/fmql/fmUtils.js"></script>
+    <script src="/bootstrap-3.0.0/assets/js/jquery.js"></script>
+    <script src="/bootstrap-3.0.0/dist/js/bootstrap.js"></script>
+
+    <script src="/ewdLite/EWD.js"></script>
+    <script type="text/javascript" src="/ewd/fmql/app.js"></script>
+	<script type="text/javascript" src="/toastr/toastr.js"></script>
+	<script type="text/javascript" src="/select2/select2.js"></script>
+    <!--  =======================================  -->
+  </body>
+</html>

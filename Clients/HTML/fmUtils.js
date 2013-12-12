@@ -324,12 +324,17 @@ function selectResultToHTML(reply, useURIForm, base, excludes)
             if (!("uri" in result))
                 continue;
             var label = result["uri"].label.split("/")[1];
-            resultsMarkup += "<tr><td>" + (offset + i + 1) + ".</td><td><a href=\"";
+            resultsMarkup += "<tr><td>" + (offset + i + 1) + ".</td><td>";
+			if (EWD) {resultsMarkup += "<a href='#'" }
+			else {resultsMarkup +="<a href=\""};
             if (useURIForm) // use URL format
                 resultsMarkup += base + result["uri"]["value"];
-            else
-                resultsMarkup += base + "?fmql=DESCRIBE " + result["uri"]["value"] + "&format=HTML";
-            resultsMarkup += "\">" + label + "</a></td>";
+            else {
+				if (EWD) {resultsMarkup += " value='DESCRIBE " + result["uri"]["value"] + "'"}
+				else {resultsMarkup += base + "?fmql=DESCRIBE " + result["uri"]["value"] + "&format=HTML"};
+				}
+			if (EWD) {resultsMarkup += ">" + label + "</a></td>";}
+            else {resultsMarkup += "\">" + label + "</a></td>";}
             if ("sameAs" in result["uri"])
                 resultsMarkup += "<td>" + sameAsLink(result["uri"], base) + "</td>";
             resultsMarkup += "</tr>";
@@ -375,7 +380,7 @@ function makeNavMarkup(useURIForm, base, reply)
     if (args["OFFSET"] != "0")
     {
         var offset = parseInt(args["OFFSET"]);
-        navMarkup = "<div class='pager'>";
+        navMarkup = "<div class='pager' id='FMQLpage'>"; //cpc
         var prevURI = "";
         var poffset = offset - parseInt(args["LIMIT"]);
         if (useURIForm) // use URL format
@@ -394,8 +399,10 @@ function makeNavMarkup(useURIForm, base, reply)
             else
                 delete pargs["OFFSET"]
             prevURI = base + "?fmql=" + makeQuery(pargs) + "&format=HTML";
+			var FMQLvalue=makeQuery(pargs); //cpc
         }
-        navMarkup += "<a href='" + prevURI + "' rel='prev'>PREV</a>";
+		if (EWD) {navMarkup += "<a href='#' rel='prev' value='"+FMQLvalue+"'>Prev</a>";} //cpc
+        else {navMarkup += "<a href='" + prevURI + "' rel='prev'>PREV</a>"; }
     }
     else
         offset = 0;
@@ -403,7 +410,7 @@ function makeNavMarkup(useURIForm, base, reply)
     if (args["LIMIT"] == reply.results.length.toString())
     {
         if (navMarkup == "")
-            navMarkup = "<div class='pager'>";
+            navMarkup = "<div class='pager' id='FMQLpage'>"; //cpc
         else
             navMarkup += " | ";
         var nextURI = "";
@@ -421,8 +428,10 @@ function makeNavMarkup(useURIForm, base, reply)
                 nargs[key] = args[key];
             nargs["OFFSET"] = noffset;
             nextURI = base + "?fmql=" + makeQuery(nargs) + "&format=HTML";
+			var FMQLvalue=makeQuery(nargs); //cpc
         }
-        navMarkup += "<a href='" + nextURI + "' rel='next'>NEXT</a>";
+		if (EWD) {navMarkup += "<a href='#' rel='next' value='"+FMQLvalue+"'>Next</a>";} //cpc
+        else {navMarkup += "<a href='" + nextURI + "' rel='next'>NEXT</a>"; }
     }
     if (navMarkup)
     {
@@ -474,12 +483,22 @@ function describeFieldsToHTML(fields, result, useURIForm, base, excludes)
             continue;
         if (result[field]["type"] == "uri")
         {
-            resultsMarkup += "<dt>" + displayField + "</dt><dd><a href=\"";
+			resultsMarkup += "<dt>" + displayField + "</dt><dd>"
+			if (EWD) {resultsMarkup += "<a href='#'"}
+			else {resultsMarkup += "<a href=\"" };
+            //resultsMarkup += "<dt>" + displayField + "</dt><dd><a href=\"";
             if (useURIForm) 
-                resultsMarkup += base + result[field]["value"];
-            else
-                resultsMarkup += base + "?fmql=DESCRIBE " + result[field]["value"] + "&format=HTML";
-            resultsMarkup += "\">" + result[field]["label"] + "</a></dd>";
+                {resultsMarkup += base + result[field]["value"];}
+            else {
+				if (EWD) {
+					resultsMarkup += " value='DESCRIBE " + result[field]["value"]
+					}
+				else {
+					resultsMarkup += base + "?fmql=DESCRIBE " + result[field]["value"] + "&format=HTML"
+					};
+			};
+			if (EWD) {resultsMarkup += "'>" + result[field]["label"] + "</a></dd>";} //cpc
+            else {resultsMarkup += "\">" + result[field]["label"] + "</a></dd>";};
         }
         else if (result[field]["type"] == "typed-literal")
         { 
@@ -503,7 +522,8 @@ function describeFieldsToHTML(fields, result, useURIForm, base, excludes)
                 if (!/\_/.exec((result["uri"]["value"].split("-")[1])))
                 {
                     var cNodeQuery = "DESCRIBE " + result[field]["file"] + " IN " + result["uri"]["value"] + " LIMIT 10";
-                    resultsMarkup += " <a href='/query?fmql=" + cNodeQuery + "&format=HTML'>View in Query Maker</a></dd>";
+					if (EWD) {resultsMarkup += " <a href='#' value='" + cNodeQuery + "'>View in Query Maker</a></dd>";}
+                    else {resultsMarkup += " <a href='/query?fmql=" + cNodeQuery + "&format=HTML'>View in Query Maker</a></dd>";} //cpc
                 }
             }
             else
@@ -552,7 +572,8 @@ function countRefsResultToHTML(reply, useURIForm, base, limit, excludes)
             var query = "SELECT " + result["file"] + " FILTER(" + result["field"] + "=" + reply["fmql"]["URI"] + ")";
             if (limit < parseInt(result["count"]))
                 query += " LIMIT " + limit;
-            resultsMarkup += base + "?fmql=" + query + "&format=HTML";
+			if (EWD) {resultsMarkup += " value='" + query + "'"}
+            else {resultsMarkup += base + "?fmql=" + query + "&format=HTML";}
         }
         else
             resultsMarkup += base + result["file"] + "/" + limit + "/0/" + result["field"] + "=" + reply["fmql"]["URI"];
